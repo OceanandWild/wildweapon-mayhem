@@ -35,6 +35,7 @@
       "main.js",
       "preload.js",
       "wildweaponmayhem.ico",
+      "assets/**/*",
       "ai_trainer/**/*",
       "license_agreement.rtf"
     ],
