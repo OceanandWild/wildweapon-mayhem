@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -451,9 +451,9 @@
       border-left: 2px solid rgba(255, 176, 0, 0.4);
     }
 
-    /* 
+    /* ═══════════════════════════════════════════════
        INVENTORY — FULL REDESIGN
-     */
+    ═══════════════════════════════════════════════ */
     .inventory-screen {
       position: fixed;
       inset: 0;
@@ -632,9 +632,9 @@
       scrollbar-color: rgba(56,242,255,0.2) transparent;
     }
 
-    /* 
+    /* ══════════════════════════════
        COL 1 — EQUIPO ACTIVO
-     */
+    ══════════════════════════════ */
     .inv-equipped-showcase {
       display: flex;
       flex-direction: column;
@@ -800,9 +800,9 @@
       font-size: 0.68rem;
     }
 
-    /* 
+    /* ══════════════════════════════
        COL 2 — ARSENAL
-     */
+    ══════════════════════════════ */
     .inv-weapon-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
@@ -927,9 +927,9 @@
     .inv-icard-count { font-size: 0.62rem; color: var(--accent-2); font-family: var(--font-display); }
     .inv-icard-rarity { font-size: 0.58rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08rem; }
 
-    /* 
+    /* ══════════════════════════════
        COL 3 — DETALLE / ACCIÓN
-     */
+    ══════════════════════════════ */
     .inv-detail-empty {
       display: flex;
       flex-direction: column;
@@ -1779,9 +1779,9 @@
       z-index: 1;
     }
 
-    /* 
+    /* ═══════════════════════════════════════════════════════
        SUMMON — FULL REDESIGN (arcade-style like reference)
-     */
+    ═══════════════════════════════════════════════════════ */
 
     .summon-screen {
       padding: clamp(0.8rem, 2vw, 1.6rem);
@@ -1825,12 +1825,6 @@
       display: flex;
       align-items: center;
       gap: 1rem;
-    }
-
-    .summon-topbar-actions {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
     }
 
     .summon-title {
@@ -2415,8 +2409,8 @@
     }
 
     .store-grid {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 0.95rem;
       align-items: stretch;
     }
@@ -2451,24 +2445,6 @@
       display: flex;
       align-items: center;
       gap: 0.8rem;
-    }
-    .store-pack-top .weapon-model {
-      width: 132px;
-      height: 132px;
-      min-width: 132px;
-      border-radius: 22px;
-      flex: 0 0 132px;
-    }
-    .store-pack-top .weapon-model .weapon-sprite-img {
-      width: 96%;
-      height: 96%;
-      margin: 2%;
-      transform: translate(3px, 1px) scale(1.1);
-      filter:
-        drop-shadow(0 4px 12px rgba(0,0,0,0.45))
-        drop-shadow(0 0 16px rgba(255,126,72,0.45))
-        saturate(1.12)
-        contrast(1.08);
     }
 
     .store-pack-copy {
@@ -2910,85 +2886,11 @@
 
     .weapon-model.tiger-gloves {
       background:
-        radial-gradient(58px 50px at 18% 18%, rgba(255, 204, 116, 0.48), transparent 74%),
-        radial-gradient(68px 54px at 84% 76%, rgba(255, 92, 58, 0.3), transparent 72%),
-        linear-gradient(150deg, rgba(22, 10, 9, 0.96), rgba(42, 12, 10, 0.97));
-      border-color: rgba(255, 152, 88, 0.56);
-      box-shadow: 0 0 24px rgba(255, 122, 66, 0.42), 0 14px 26px rgba(0,0,0,0.45);
-    }
-    .weapon-model.tiger-gloves::before,
-    .weapon-model.tiger-gloves::after {
-      display: block;
-      pointer-events: none;
-    }
-    .weapon-model.tiger-gloves::before {
-      inset: 6px;
-      border-radius: 13px;
-      border: 1px solid rgba(255, 198, 128, 0.22);
-      background:
-        radial-gradient(52px 36px at 24% 22%, rgba(255, 216, 145, 0.2), transparent 72%),
-        radial-gradient(56px 42px at 78% 80%, rgba(255, 104, 70, 0.16), transparent 72%),
-        linear-gradient(145deg, rgba(10, 6, 6, 0.28), rgba(18, 8, 8, 0.36));
-      box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.28);
-      z-index: 1;
-    }
-    .weapon-model.tiger-gloves::after {
-      inset: 0;
-      border-radius: inherit;
-      background: linear-gradient(180deg, rgba(255,255,255,0.13), rgba(255,255,255,0) 35%, rgba(0,0,0,0.18) 100%);
-      z-index: 3;
-    }
-    .weapon-model .weapon-sprite-img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: contain;
-      image-rendering: auto;
-      pointer-events: none;
-      user-select: none;
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.32));
-    }
-    .weapon-model.tiger-gloves .weapon-sprite-img {
-      position: relative;
-      z-index: 2;
-      width: 88%;
-      height: 88%;
-      margin: 6%;
-      object-fit: contain;
-      transform: translate(2px, 1px) scale(1.04);
-      filter:
-        drop-shadow(0 3px 10px rgba(0,0,0,0.42))
-        drop-shadow(0 0 14px rgba(255,126,72,0.36))
-        saturate(1.08)
-        contrast(1.05);
-    }
-    .weapon-model.zeus-axe .weapon-sprite-img {
-      position: relative;
-      z-index: 2;
-      width: 88%;
-      height: 88%;
-      margin: 6%;
-      object-fit: contain;
-      transform: translate(0px, -1px) scale(1.03);
-      filter:
-        drop-shadow(0 3px 10px rgba(0,0,0,0.42))
-        drop-shadow(0 0 14px rgba(86,223,255,0.38))
-        saturate(1.08)
-        contrast(1.05);
-    }
-    .weapon-model.chain-scythe .weapon-sprite-img {
-      position: relative;
-      z-index: 2;
-      width: 88%;
-      height: 88%;
-      margin: 6%;
-      object-fit: contain;
-      transform: translate(1px, 0px) scale(1.03);
-      filter:
-        drop-shadow(0 3px 10px rgba(0,0,0,0.42))
-        drop-shadow(0 0 14px rgba(255,90,70,0.34))
-        saturate(1.07)
-        contrast(1.06);
+        radial-gradient(46px 40px at 28% 26%, rgba(255, 176, 70, 0.56), transparent 72%),
+        radial-gradient(56px 50px at 76% 74%, rgba(255, 83, 86, 0.24), transparent 72%),
+        linear-gradient(150deg, rgba(20, 11, 12, 0.95), rgba(33, 14, 15, 0.96));
+      border-color: rgba(255, 145, 88, 0.42);
+      box-shadow: 0 0 20px rgba(255, 120, 76, 0.34), 0 14px 26px rgba(0,0,0,0.45);
     }
 
     .item-model {
@@ -3137,9 +3039,9 @@
       height: 22px;
     }
 
-    /* 
+    /* ═══════════════════════════════════════════════════
        SUMMON REVEAL — EPIC ANIMATION SYSTEM
-     */
+    ═══════════════════════════════════════════════════ */
 
     .summon-reveal {
       position: fixed;
@@ -3151,7 +3053,7 @@
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.35s ease, background 0.35s ease;
-      z-index: 480;
+      z-index: 70;
       overflow: hidden;
     }
 
@@ -3159,7 +3061,6 @@
       opacity: 1;
       pointer-events: auto;
       background: rgba(2, 3, 8, 0.96);
-      z-index: 480;
     }
 
     /* Canvas for particle system */
@@ -3450,9 +3351,9 @@
       100% { opacity: 0; }
     }
 
-    /* 
+    /* ══════════════════════════════════════════
        LEGENDARY — Electric lightning portal
-     */
+    ══════════════════════════════════════════ */
 
     /* Yellow lightning bolts radiating from portal */
     .sr-lightning-wrap {
@@ -3507,9 +3408,9 @@
       100% { opacity: 0.9;  }
     }
 
-    /* 
+    /* ══════════════════════════════════════════
        MYTHIC — Red Dwarf collapsing star
-     */
+    ══════════════════════════════════════════ */
 
     .sr-star-wrap {
       position: absolute;
@@ -3662,7 +3563,7 @@
 
 
     .world-column,
-    /*  WORLD & EPISODE SELECTOR — REWORK  */
+    /* ═══ WORLD & EPISODE SELECTOR — REWORK ═══ */
     .episode-column {
       display: grid;
       gap: 1rem;
@@ -3988,9 +3889,9 @@
       box-shadow: 0 0 0 1px rgba(56, 242, 255, 0.35), 0 10px 22px rgba(0, 0, 0, 0.35);
     }
 
-    /* 
+    /* ══════════════════════════════════════════
        EP BANNER — redesigned preview card
-     */
+    ══════════════════════════════════════════ */
     .ep-banner-card {
       border-radius: 20px;
       border: 1px solid rgba(255,255,255,0.09);
@@ -4301,7 +4202,7 @@
     }
 
 
-    /*  COMBAT HUD — REWORK  */
+    /* ══ COMBAT HUD — REWORK ══════════════════════════════════════════ */
     .arena-ability-hud {
       position: absolute;
       left: clamp(0.75rem, 2vw, 1.5rem);
@@ -4673,9 +4574,9 @@
       pointer-events: auto;
     }
 
-    /* 
+    /* ═══════════════════════════════════════
        ARMORY — FULL REDESIGN
-     */
+    ═══════════════════════════════════════ */
     .armory-shell {
       width: min(1080px, 96vw);
       height: min(700px, 88vh);
@@ -5311,9 +5212,9 @@
       50%       { box-shadow: 0 0 14px rgba(255,215,0,0.75); }
     }
 
-    /* 
+    /* ════════════════════════════════════════════════════
        END-OF-RUN SCREEN
-     */
+    ════════════════════════════════════════════════════ */
     .run-end-screen {
       position: fixed;
       inset: 0;
@@ -5891,7 +5792,7 @@
         <button class="menu-card" data-action="armory" aria-pressed="false">
           <div class="menu-icon">&#11014;</div>
           <div>
-            <div class="menu-title">Armeria</div>
+            <div class="menu-title">Armería</div>
             <div class="menu-subtext">Mejorar armas con materiales.</div>
           </div>
         </button>
@@ -6279,7 +6180,7 @@
               <div class="pity-section-title">Contador de piedad</div>
               <div class="pity-grid" id="summon-pity-grid">
                 <div class="pity-row">
-                  <span>Epico</span>
+                  <span>Épico</span>
                   <div class="pity-bar epico"><span id="pity-epico" style="width:0%"></span></div>
                   <span class="pity-val" id="pity-epico-label">0/20</span>
                 </div>
@@ -6326,13 +6227,13 @@
             <div class="summon-cta-bar">
               <div class="summon-cta-left">
                 <div class="cta-banner-name" id="cta-banner-name">—</div>
-                <div class="cta-banner-tag" id="cta-banner-tag">*</div>
+                <div class="cta-banner-tag" id="cta-banner-tag">—</div>
               </div>
               <div class="summon-cta-btns">
                 <div class="summon-feedback" id="summon-feedback"></div>
                 <button class="summon-btn primary" type="button" data-summon="1">
                   <span class="mc-icon"></span>
-                  <span class="lucky-token-icon" id="lucky-token-display">* Inv. Suertuda <small>x<span id="lucky-token-qty">1</span></small></span>
+                  <span class="lucky-token-icon" id="lucky-token-display">✦ Inv. Suertuda <small>x<span id="lucky-token-qty">1</span></small></span>
                   x1
                   <span class="summon-cost" id="summon-x1-cost">100</span>
                 </button>
@@ -6363,10 +6264,7 @@
             <div class="summon-title">Tienda</div>
             <div class="summon-coins-pill" id="store-tides-meta">Tides: 0</div>
           </div>
-          <div class="summon-topbar-actions">
-            <button class="link-pill" type="button" id="store-link-btn">Conectar Ocean Pay</button>
-            <button class="summon-back-btn" type="button" data-action="store-back"><- Volver</button>
-          </div>
+          <button class="summon-back-btn" type="button" data-action="store-back">← Volver</button>
         </div>
         <div id="store-panel-content" style="padding:0.5rem 0.3rem;"></div>
       </div>
@@ -6425,10 +6323,10 @@
         <div>Ocean Pay</div>
         <button class="link-pill" type="button" id="op-auth-close">Cerrar</button>
       </div>
-      <div class="play-subtext" id="op-auth-hint">Ingresa tus credenciales para sincronizar MayhemCoins.</div>
+      <div class="play-subtext">Ingresa tus credenciales para sincronizar MayhemCoins.</div>
       <form id="op-auth-form" autocomplete="off">
         <input type="text" id="op-auth-user" placeholder="Usuario" required />
-        <input type="password" id="op-auth-pass" placeholder="Contrasena" required />
+        <input type="password" id="op-auth-pass" placeholder="Contraseña" required />
         <div class="op-auth-error" id="op-auth-error"></div>
         <div class="op-auth-actions">
           <button type="button" id="op-auth-cancel">Cancelar</button>
@@ -6504,7 +6402,7 @@
           <div class="door-choice" id="door-choice">
             <div class="door-choice-title">⬡ Elige tu Puerta</div>
             <button class="door-option" type="button" data-door="coins">
-              <span class="door-opt-icon">ðŸª™</span>
+              <span class="door-opt-icon">🪙</span>
               <span class="door-opt-body">
                 <strong>Puerta MayhemCoins</strong>
                 <div class="play-subtext">Opcion rara</div>
@@ -6520,10 +6418,10 @@
               <div class="door-indicator">Items</div>
             </button>
             <button class="door-option door-option-lucky" type="button" data-door="lucky" style="display:none">
-              <span class="door-opt-icon">*</span>
+              <span class="door-opt-icon">✦</span>
               <span class="door-opt-body">
-                <strong>* Invocacion Suertuda</strong>
-                <div class="play-subtext">Jefe legendario - 10% objeto unico</div>
+                <strong>✦ Invocacion Suertuda</strong>
+                <div class="play-subtext">Jefe legendario · 10% objeto unico</div>
               </span>
               <div class="door-indicator door-indicator-lucky">ULTRA RARO</div>
             </button>
@@ -6576,7 +6474,7 @@
             <div class="go-subtitle" id="go-subtitle">Fuiste derrotado en la puerta <span id="go-door">1</span></div>
             <div class="go-btns">
               <button class="go-btn primary" id="go-retry">Reintentar</button>
-              <button class="go-btn secondary" id="go-menu">Volver al menu</button>
+              <button class="go-btn secondary" id="go-menu">Volver al menú</button>
             </div>
           </div>
         </div>
@@ -6590,9 +6488,9 @@
         <!-- Top bar -->
         <div class="armory-topbar">
           <div class="armory-title-block">
-            <div class="armory-title">Armeria</div>
+            <div class="armory-title">Armería</div>
           </div>
-          <button class="armory-back" type="button" data-action="armory-back"><- Volver</button>
+          <button class="armory-back" type="button" data-action="armory-back">← Volver</button>
         </div>
 
         <!-- 3-col body -->
@@ -6805,9 +6703,7 @@
     const coinsMetaEl = document.getElementById('coins-meta');
     const startRunBtn = document.getElementById('start-run');
     const opLinkBtn = document.getElementById('op-link-btn');
-    const storeLinkBtn = document.getElementById('store-link-btn');
     const opAuthEl = document.getElementById('op-auth');
-    const opAuthHint = document.getElementById('op-auth-hint');
     const opAuthForm = document.getElementById('op-auth-form');
     const opAuthUser = document.getElementById('op-auth-user');
     const opAuthPass = document.getElementById('op-auth-pass');
@@ -7153,7 +7049,6 @@
     let selectedWorld = worlds[0];
     let selectedEpisode = selectedWorld.episodes[0];
     let selectedBanner = SUMMON_BANNERS[0];
-    let summonInProgress = false;
     let selectedWeaponId = 'katana';
     // Restore equipped weapon from saved state
     if (state.equippedWeapon && WEAPON_LIBRARY[state.equippedWeapon]) {
@@ -7174,57 +7069,10 @@
     const enemies = [];
     const pickups = [];
     const cooldowns = { m1: 0, q: 0, e: 0, r: 0 };
-    const M1_SPAM_LOCK_MS = 700;
     const moveKeys = new Set();
     let charge = 0;
     let m1Combo = 0;
-    let zeusAxeLastM1At = 0;
-    let zeusAxeAnimUntil = 0;
-    let zeusAxeAttackSerial = 0;
-    let chainScytheLastM1At = 0;
-    let chainScytheAnimUntil = 0;
-    let chainScytheAttackSerial = 0;
-    let tigerGlovesLastM1At = 0;
     let lastAim = null;
-    const ZEUS_AXE_M1_SFX_PATHS = [
-      'assets/SFX/zeusaxevoltagecrackv1.wav',
-      'assets/SFX/zeusaxevoltagecrackv2.wav',
-      'assets/SFX/zeusaxevoltagecrackv3.wav',
-      'assets/SFX/zeusaxevoltagecrackv4.wav'
-    ];
-    const zeusAxeM1SfxPool = ZEUS_AXE_M1_SFX_PATHS.map((src) => {
-      const a = new Audio(src);
-      a.preload = 'auto';
-      a.volume = 0.86;
-      return a;
-    });
-    let zeusAxeM1SfxBag = [];
-    const TIGER_GLOVES_M1_SFX_PATHS = [
-      'assets/SFX/tigerglovesclawv1.wav',
-      'assets/SFX/tigerglovesclawv2.wav',
-      'assets/SFX/tigerglovesclawv3.wav',
-      'assets/SFX/tigerglovesclawv4.wav'
-    ];
-    const tigerGlovesM1SfxPool = TIGER_GLOVES_M1_SFX_PATHS.map((src) => {
-      const a = new Audio(src);
-      a.preload = 'auto';
-      a.volume = 0.82;
-      return a;
-    });
-    let tigerGlovesM1SfxBag = [];
-    const CHAIN_SCYTHE_M1_SFX_PATHS = [
-      'assets/SFX/chainscytheslashv1.wav',
-      'assets/SFX/chainscytheslashv2.wav',
-      'assets/SFX/chainscytheslashv3.wav',
-      'assets/SFX/chainscytheslashv4.wav'
-    ];
-    const chainScytheM1SfxPool = CHAIN_SCYTHE_M1_SFX_PATHS.map((src) => {
-      const a = new Audio(src);
-      a.preload = 'auto';
-      a.volume = 0.84;
-      return a;
-    });
-    let chainScytheM1SfxBag = [];
     const camera = { x: 0, y: 0, shake: 0, shakeUntil: 0 };
     const M1_SWINGS = [
       { start: -1.0, end: 0.6 },
@@ -7237,14 +7085,6 @@
       { start: -1.3, end: 0.9 },   // Barrido de izquierda a derecha
       { start: 1.1, end: -1.0 },   // Barrido de derecha a izquierda
       { start: -0.4, end: 1.8 },   // Golpe descendente
-    ];
-    const CS_M1_TOTAL_DAMAGE_MULT = 0.75; // mismo daï¿½o total que el M1 previo
-    // Timeline sincronizada al spritesheet (impactos por frame)
-    const CS_M1_FRAME_PLAN = [
-      { frame: 1,  radius: 92,  spread: Math.PI * 0.42, dmgShare: 0.22, fxDur: 0.14, shake: 2 },
-      { frame: 4,  radius: 108, spread: Math.PI * 0.54, dmgShare: 0.24, fxDur: 0.18, shake: 3 },
-      { frame: 8,  radius: 124, spread: Math.PI * 0.64, dmgShare: 0.26, fxDur: 0.22, shake: 4 },
-      { frame: 12, radius: 136, spread: Math.PI * 0.72, dmgShare: 0.28, fxDur: 0.24, shake: 5, chainLash: true },
     ];
     let mcSyncPending = 0;
     let mcSyncInFlight = false;
@@ -7333,7 +7173,6 @@
       const baseByRarity = { comun: 120, poco_comun: 146, raro: 178, epico: 230, legendario: 300, mitico: 380 };
       let base = baseByRarity[weapon.rarity] || 120;
       if (weaponId === 'zeus_axe') base = 520; // premium mythic burst baseline
-      if (weaponId === 'tiger_gloves') base = 430; // fast combo baseline tuned below zeus
       const perLevel = weaponId === 'zeus_axe' ? 32 : 18;
       return Math.round(base + (lvl - 1) * perLevel);
     }
@@ -7441,32 +7280,19 @@
       }
     }
 
-    function openOceanPayAuth(reasonText = '') {
+    function openOceanPayAuth() {
       if (!opAuthEl) return;
       opAuthEl.classList.add('is-active');
       opAuthEl.setAttribute('aria-hidden', 'false');
-      if (opAuthHint) {
-        opAuthHint.textContent = reasonText && reasonText.trim()
-          ? reasonText.trim()
-          : 'Ingresa tus credenciales para sincronizar MayhemCoins.';
-      }
       if (opAuthError) opAuthError.textContent = '';
       if (opAuthUser) opAuthUser.value = '';
       if (opAuthPass) opAuthPass.value = '';
-      setTimeout(() => { try { opAuthUser?.focus(); } catch (_) {} }, 0);
     }
 
     function closeOceanPayAuth() {
       if (!opAuthEl) return;
       opAuthEl.classList.remove('is-active');
       opAuthEl.setAttribute('aria-hidden', 'true');
-    }
-
-    function requestOceanPayLink(reasonText = '') {
-      openOceanPayAuth(
-        reasonText ||
-        'Conecta Ocean Pay para habilitar compras, sincronizacion de saldo y funciones premium de WildWeapon Mayhem.'
-      );
     }
 
     async function submitOceanPayAuth(event) {
@@ -7519,9 +7345,6 @@
       }
       if (opLinkBtn) {
         opLinkBtn.style.display = isOceanPayLinked() ? 'none' : '';
-      }
-      if (storeLinkBtn) {
-        storeLinkBtn.style.display = isOceanPayLinked() ? 'none' : '';
       }
       updateSummonButtons();
       if (storeScreen?.classList.contains('is-active')) {
@@ -7612,7 +7435,7 @@
 
     async function buyStorePack(packId, triggerBtn) {
       if (!isOceanPayLinked()) {
-        requestOceanPayLink('Conecta Ocean Pay para completar compras en la Tienda de WildWeapon Mayhem.');
+        openOceanPayAuth();
         return;
       }
       if (triggerBtn?.dataset?.loading === '1') return;
@@ -7742,9 +7565,9 @@
       updateChargeUI();
     }
 
-    /* 
+    /* ═══════════════════════════════════════════════════════════
        CANVAS ILLUSTRATIONS — World & Episode 2D Art
-     */
+    ═══════════════════════════════════════════════════════════ */
 
     function drawWorldIllustration(canvas, world) {
       const W = canvas.width, H = canvas.height;
@@ -8987,118 +8810,35 @@ const ZEUS_AXE_SVG = `
   </g>
 </svg>`;
 
-    const TIGER_GLOVES_SVG = `
+const TIGER_GLOVES_SVG = `
 <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <defs>
-    <linearGradient id="tg-shell" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffd082"/>
-      <stop offset="38%" stop-color="#ff9345"/>
-      <stop offset="100%" stop-color="#d84c29"/>
+    <linearGradient id="tg-main" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffca6b"/>
+      <stop offset="55%" stop-color="#ff8a42"/>
+      <stop offset="100%" stop-color="#ef4e2d"/>
     </linearGradient>
-    <linearGradient id="tg-dark" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#2a130f"/>
-      <stop offset="100%" stop-color="#120706"/>
+    <linearGradient id="tg-shadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a1110"/>
+      <stop offset="100%" stop-color="#110607"/>
     </linearGradient>
-    <linearGradient id="tg-claw" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#fff7d8"/>
-      <stop offset="100%" stop-color="#ffb86f"/>
-    </linearGradient>
-    <filter id="tg-glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="2" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="tg-glow" x="-45%" y="-45%" width="190%" height="190%">
+      <feGaussianBlur stdDeviation="2.4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-  <rect x="14" y="19" width="68" height="58" rx="16" fill="url(#tg-dark)"/>
-  <g filter="url(#tg-glow)">
-    <path d="M20 39 C20 28 28 22 36 22 C41 22 45 24 48 28 C51 24 55 22 60 22 C68 22 76 28 76 39
-             L76 62 C76 69 70 75 63 75 L33 75 C26 75 20 69 20 62 Z"
-          fill="url(#tg-shell)"/>
+  <g>
+    <path d="M18 34 C18 24 26 18 34 18 C40 18 44 21 46 25 C48 21 52 18 58 18 C66 18 74 24 74 34
+             L74 66 C74 72 68 78 62 78 L30 78 C24 78 18 72 18 66 Z" fill="url(#tg-shadow)"/>
+    <path d="M21 37 C21 28 28 22 35 22 C40 22 44 25 46 29 C48 25 52 22 57 22 C64 22 71 28 71 37
+             L71 63 C71 69 66 74 60 74 L32 74 C26 74 21 69 21 63 Z" fill="url(#tg-main)" filter="url(#tg-glow)"/>
+    <path d="M30 28 L34 32 M36 24 L40 30 M62 28 L58 32 M56 24 L52 30"
+          stroke="rgba(255,245,220,0.9)" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M28 44 L64 44 M28 52 L64 52 M28 60 L64 60" stroke="rgba(20,8,8,0.38)" stroke-width="2"/>
+    <circle cx="34" cy="66" r="4" fill="rgba(255,220,170,0.95)"/>
+    <circle cx="58" cy="66" r="4" fill="rgba(255,220,170,0.95)"/>
   </g>
-  <path d="M24 45 L72 45 M24 53 L72 53 M24 61 L72 61"
-        stroke="rgba(25,8,6,0.34)" stroke-width="2.2"/>
-  <path d="M34 30 L38 35 M40 27 L44 33 M62 30 L58 35 M56 27 L52 33"
-        stroke="rgba(255,244,220,0.9)" stroke-width="1.8" stroke-linecap="round"/>
-  <path d="M28 18 L31 30 L35 20 Z M36 16 L39 30 L43 18 Z M44 15 L47 30 L51 17 Z"
-        fill="url(#tg-claw)" opacity="0.95"/>
-  <path d="M68 18 L65 30 L61 20 Z M60 16 L57 30 L53 18 Z M52 15 L49 30 L45 17 Z"
-        fill="url(#tg-claw)" opacity="0.95"/>
-  <circle cx="36" cy="67" r="4.1" fill="rgba(255,224,184,0.96)"/>
-  <circle cx="60" cy="67" r="4.1" fill="rgba(255,224,184,0.96)"/>
-  <path d="M32 38 C36 36 40 35 48 35 C56 35 60 36 64 38"
-        stroke="rgba(255,255,255,0.32)" stroke-width="1.1" fill="none"/>
 </svg>`;
-
-    const CHAIN_SCYTHE_FRAME_COUNT = 24;
-    const CHAIN_SCYTHE_PRESENTATION_SRC = 'assets/chain_scythe_00.png';
-    const CHAIN_SCYTHE_FALLBACK_SRC = 'assets/chain_scythe_00.png';
-    const CHAIN_SCYTHE_FRAME_PATHS = Array.from(
-      { length: CHAIN_SCYTHE_FRAME_COUNT },
-      (_, i) => `assets/chain_scythe_${String(i).padStart(2, '0')}.png?v=20260409c`
-    );
-    const CHAIN_SCYTHE_SPRITES = CHAIN_SCYTHE_FRAME_PATHS.map((src) => {
-      const img = new Image();
-      img.decoding = 'async';
-      img.loading = 'eager';
-      img.src = src;
-      return img;
-    });
-    const CHAIN_SCYTHE_IDLE_SEQUENCE = [0, 1, 2, 3, 2, 1];
-    const CHAIN_SCYTHE_ATTACK_SEQUENCE = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
-    const CHAIN_SCYTHE_FRAME_STEP_MS = 86;
-    const CHAIN_SCYTHE_ATTACK_DURATION_MS = CHAIN_SCYTHE_ATTACK_SEQUENCE.length * CHAIN_SCYTHE_FRAME_STEP_MS;
-
-    const ZEUS_AXE_FRAME_COUNT = 24;
-    const ZEUS_AXE_PRESENTATION_SRC = 'assets/Zeus%20Axe%20(Presentation).png';
-    const ZEUS_AXE_FALLBACK_SRC = 'assets/zeus_axe_00.png';
-    const ZEUS_AXE_FRAME_PATHS = Array.from({ length: ZEUS_AXE_FRAME_COUNT }, (_, i) => `assets/zeus_axe_${String(i).padStart(2, '0')}.png`);
-    const ZEUS_AXE_SPRITES = ZEUS_AXE_FRAME_PATHS.map((src) => {
-      const img = new Image();
-      img.decoding = 'async';
-      img.loading = 'eager';
-      img.src = src;
-      return img;
-    });
-    const ZEUS_AXE_RENDER_FRAMES = new Array(ZEUS_AXE_FRAME_COUNT).fill(null);
-    const ZEUS_AXE_FRAME_META = new Array(ZEUS_AXE_FRAME_COUNT).fill(null);
-    let zeusAxeFrameRef = null;
-    const ZEUS_AXE_ATTACK_SEQUENCE = [
-      0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18
-    ];
-    const ZEUS_AXE_FRAME_STEP_MS = 24;
-    const ZEUS_AXE_ATTACK_DURATION_MS = ZEUS_AXE_ATTACK_SEQUENCE.length * ZEUS_AXE_FRAME_STEP_MS;
-    const ZEUS_AXE_HIT_PRIMARY_FRAME = 8;
-    const ZEUS_AXE_HIT_SECONDARY_FRAME = 12;
-    const ZEUS_AXE_IDLE_FRAMES = [0];
-    const ZEUS_ELECTRIFY_DURATION_MS = 500;
-    const ZEUS_ELECTRIFY_TICK_MS = 100;
-    const ZEUS_ELECTRIFY_SLOW_MUL = 0.64;
-    const ZEUS_ELECTRIFY_TICK_MULT = 0.11;
-    const ZEUS_M1_SWINGS = [
-      { start: -1.08, end: 0.42 },
-      { start: 1.02, end: -0.45 },
-      { start: -1.24, end: 0.60 },
-      { start: 1.18, end: -0.68 }
-    ];
-    const ZEUS_M1_PROFILES = [
-      { radius: 130, spread: Math.PI * 0.56, dmgMain: 0.88, dmgFollow: 0.30, shake: 4, charge: 9.2 },
-      { radius: 136, spread: Math.PI * 0.58, dmgMain: 0.94, dmgFollow: 0.34, shake: 5, charge: 9.8 },
-      { radius: 144, spread: Math.PI * 0.60, dmgMain: 1.02, dmgFollow: 0.38, shake: 6, charge: 10.6 },
-      { radius: 154, spread: Math.PI * 0.62, dmgMain: 1.12, dmgFollow: 0.45, shake: 7, charge: 11.8 }
-    ];
-
-    const TIGER_GLOVES_FRAME_COUNT = 24;
-    const TIGER_GLOVES_PRESENTATION_SRC = 'assets/Tiger%20Gloves%20(Presentation).png';
-    const TIGER_GLOVES_FALLBACK_SRC = 'assets/tiger_gloves_00.png';
-    const TIGER_GLOVES_FRAME_PATHS = Array.from({ length: TIGER_GLOVES_FRAME_COUNT }, (_, i) => `assets/tiger_gloves_${String(i).padStart(2, '0')}.png`);
-    const TIGER_GLOVES_SPRITES = TIGER_GLOVES_FRAME_PATHS.map((src) => {
-      const img = new Image();
-      img.decoding = 'async';
-      img.loading = 'eager';
-      img.src = src;
-      return img;
-    });
-    const TIGER_GLOVES_FRAME_META = new Array(TIGER_GLOVES_FRAME_COUNT).fill(null);
-    let tigerGlovesFrameRef = null;
 
     const WEAPON_SVGS = {
       'katana':        KATANA_SVG,
@@ -9115,15 +8855,6 @@ const ZEUS_AXE_SVG = `
     function getWeaponModelMarkup(weapon, sizeClass = '') {
       if (!weapon) return '';
       const classes = ['weapon-model', weapon.model, sizeClass].filter(Boolean).join(' ');
-      if (weapon.model === 'tiger-gloves') {
-        return `<div class="${classes}"><img class="weapon-sprite-img" src="${TIGER_GLOVES_PRESENTATION_SRC}" alt="" draggable="false" onerror="this.onerror=null;this.src='${TIGER_GLOVES_FALLBACK_SRC}'" /></div>`;
-      }
-      if (weapon.model === 'chain-scythe') {
-        return `<div class="${classes}"><img class="weapon-sprite-img" src="${CHAIN_SCYTHE_PRESENTATION_SRC}" alt="" draggable="false" onerror="this.onerror=null;this.src='${CHAIN_SCYTHE_FALLBACK_SRC}'" /></div>`;
-      }
-      if (weapon.model === 'zeus-axe') {
-        return `<div class="${classes}"><img class="weapon-sprite-img" src="${ZEUS_AXE_PRESENTATION_SRC}" alt="" draggable="false" onerror="this.onerror=null;this.src='${ZEUS_AXE_FALLBACK_SRC}'" /></div>`;
-      }
       const svg = WEAPON_SVGS[weapon.model];
       if (svg) return `<div class="${classes}">${svg}</div>`;
       return `<div class="${classes}"></div>`;
@@ -9131,18 +8862,6 @@ const ZEUS_AXE_SVG = `
 
     function injectWeaponSVG(el, model) {
       if (!el) return;
-      if (model === 'tiger-gloves') {
-        el.innerHTML = `<img class="weapon-sprite-img" src="${TIGER_GLOVES_PRESENTATION_SRC}" alt="" draggable="false" onerror="this.onerror=null;this.src='${TIGER_GLOVES_FALLBACK_SRC}'" />`;
-        return;
-      }
-      if (model === 'chain-scythe') {
-        el.innerHTML = `<img class="weapon-sprite-img" src="${CHAIN_SCYTHE_PRESENTATION_SRC}" alt="" draggable="false" onerror="this.onerror=null;this.src='${CHAIN_SCYTHE_FALLBACK_SRC}'" />`;
-        return;
-      }
-      if (model === 'zeus-axe') {
-        el.innerHTML = `<img class="weapon-sprite-img" src="${ZEUS_AXE_PRESENTATION_SRC}" alt="" draggable="false" onerror="this.onerror=null;this.src='${ZEUS_AXE_FALLBACK_SRC}'" />`;
-        return;
-      }
       el.innerHTML = WEAPON_SVGS[model] || '';
     }
     function getItemModelMarkup(item) {
@@ -9191,7 +8910,7 @@ const ZEUS_AXE_SVG = `
       const poolTitle = document.querySelector('.pool-area-title');
       if (poolTitle) {
         if (lucky) {
-          poolTitle.innerHTML = 'Pool de armas <span class="lucky-pool-badge">* SUERTUDA</span>';
+          poolTitle.innerHTML = 'Pool de armas <span class="lucky-pool-badge">✦ SUERTUDA</span>';
         } else {
           poolTitle.textContent = 'Pool de armas';
         }
@@ -9333,12 +9052,12 @@ const ZEUS_AXE_SVG = `
         if (tokenDisplay) tokenDisplay.style.display = 'inline-flex';
         if (tokenQty)     tokenQty.textContent = tokenCount;
         if (costSpan)     costSpan.style.display = 'none';
-        s1.disabled = summonInProgress ? true : false;
+        s1.disabled = false;
       } else {
         s1.classList.remove('has-lucky-token');
         if (tokenDisplay) tokenDisplay.style.display = 'none';
         if (costSpan)     costSpan.style.display = '';
-        s1.disabled = summonInProgress ? true : (state.coins < 100);
+        s1.disabled = state.coins < 100;
       }
       // Always refresh the grid to reflect current token state
       refreshPoolRateGrid(tokenCount > 0);
@@ -9350,12 +9069,6 @@ const ZEUS_AXE_SVG = `
       const s1  = summonScreen.querySelector('[data-summon="1"]');
       const s10 = summonScreen.querySelector('[data-summon="10"]');
       if (!s1 || !s10) return;
-      if (summonInProgress) {
-        s1.disabled = true;
-        s10.disabled = true;
-        s10.innerHTML = `<span class="mc-icon"></span> x10<span class="summon-cost">1000</span>`;
-        return;
-      }
       const affordable = Math.floor(state.coins / 100);
       const tenCount   = Math.min(10, affordable);
       s1.disabled = state.coins < 100;
@@ -9366,12 +9079,6 @@ const ZEUS_AXE_SVG = `
         s10.disabled = true;
         s10.innerHTML = `<span class="mc-icon"></span> x10<span class="summon-cost">1000</span>`;
       }
-    }
-
-    function setSummonLock(nextLocked) {
-      summonInProgress = Boolean(nextLocked);
-      updateSummonButtons();
-      updateSummonX1Button();
     }
 
     function renderPity() {
@@ -9512,13 +9219,8 @@ const ZEUS_AXE_SVG = `
 
     async function handleSummon(requested) {
       if (!selectedBanner) return;
-      const feedback = document.getElementById('summon-feedback');
-      if (summonInProgress) {
-        if (feedback) feedback.textContent = 'Invocacion en curso...';
-        return;
-      }
-      setSummonLock(true);
       sfxSummonClick();
+      const feedback = document.getElementById('summon-feedback');
       if (feedback) feedback.textContent = '';
       // If x1 and player has lucky token, use it for free
       if (requested === 1) {
@@ -9551,10 +9253,6 @@ const ZEUS_AXE_SVG = `
           saveState(); renderPity();
           // Restore normal rates display after this reveal
           refreshPoolRateGrid(false);
-          if (!results.length) {
-            setSummonLock(false);
-            return;
-          }
           openSummonReveal(results);
           return;
         }
@@ -9562,7 +9260,6 @@ const ZEUS_AXE_SVG = `
       const affordable = Math.floor(state.coins / 100);
       if (affordable < 1) {
         if (feedback) feedback.textContent = 'Saldo insuficiente.';
-        setSummonLock(false);
         return;
       }
       const count = requested === 10 ? Math.min(10, affordable) : 1;
@@ -9570,7 +9267,6 @@ const ZEUS_AXE_SVG = `
       const ok = await spendCoins(cost);
       if (!ok) {
         if (feedback) feedback.textContent = 'No se pudo sincronizar.';
-        setSummonLock(false);
         return;
       }
       const results = [];
@@ -9604,10 +9300,6 @@ const ZEUS_AXE_SVG = `
       state.summonPity[selectedBanner.id] = pity;
       saveState();
       renderPity();
-      if (!results.length) {
-        setSummonLock(false);
-        return;
-      }
       openSummonReveal(results);
     }
 
@@ -9823,8 +9515,6 @@ const ZEUS_AXE_SVG = `
       if (!summonRevealEl) return;
       if (!results || results.length === 0) return;
       if (!srCtx) srInitCanvas();
-      // Ensure reveal always renders above store/summon surfaces.
-      if (typeof setStoreOpen === 'function') setStoreOpen(false);
 
       const highlight     = getHighestRarity(results);
       const color         = srCssColor(highlight);
@@ -9902,8 +9592,8 @@ const ZEUS_AXE_SVG = `
       setTimeout(() => {
         renderSummonResults(results);
         if (resultsHeader) {
-          const labels = { comun:'Invocacion', poco_comun:'!Poco Comun!', raro:'!Raro!', epico:'!Epico!', legendario:'!Legendario!', mitico:'!Mitico!' };
-          resultsHeader.textContent  = labels[highlight] || 'Invocacion';
+          const labels = { comun:'Invocación', poco_comun:'¡Poco Común!', raro:'¡Raro!', epico:'¡Épico!', legendario:'⭐ ¡Legendario!', mitico:'🔥 ¡MÍTICO!' };
+          resultsHeader.textContent  = labels[highlight] || 'Invocación';
           resultsHeader.style.color  = color;
           resultsHeader.style.textShadow = `0 0 30px ${color}, 0 0 60px ${color}`;
         }
@@ -10057,16 +9747,15 @@ const ZEUS_AXE_SVG = `
       if (flash)         { flash.classList.remove('bang'); }
       if (lightningWrap) { lightningWrap.style.display = 'none'; }
       if (starWrap)      { starWrap.style.display = 'none'; starWrap.classList.remove('visible'); srResetStar(); }
-      setSummonLock(false);
     }
 
     /* stub — kept for compat */
     function spawnSummonVfx(rarity) {}
 
-    /* 
+    /* ════════════════════════════════════════════════════════════
        SFX — Procedural Web Audio system for Summon animations
        All sounds are synthesized — no external files needed.
-     */
+    ════════════════════════════════════════════════════════════ */
     let _sfxCtx = null;
 
     function sfxCtx() {
@@ -10205,7 +9894,7 @@ const ZEUS_AXE_SVG = `
       _sfxLightOsc = null;
     }
 
-    /* ── 4. Star rumble (m?tico) ── */
+    /* ── 4. Star rumble (mítico) ── */
     function sfxStarRumbleStart() {
       const ctx = sfxCtx(); if (!ctx) return;
       sfxStarRumbleStop();
@@ -10501,17 +10190,12 @@ const ZEUS_AXE_SVG = `
         storeBtn.classList.toggle('is-active', nextOpen);
         storeBtn.setAttribute('aria-pressed', String(nextOpen));
       }
-      if (nextOpen) {
-        renderStoreUI();
-        if (!isOceanPayLinked()) {
-          requestOceanPayLink('Conecta Ocean Pay para usar la Tienda sin bloqueos y habilitar compras al instante.');
-        }
-      }
+      if (nextOpen) renderStoreUI();
     }
 
-    /* 
+    /* ══════════════════════════════════════════════════════════════════
        WEAPON HUD — 2D Canvas illustrations + cooldown system
-     */
+    ══════════════════════════════════════════════════════════════════ */
 
     // Draw a weapon illustration on a 58x58 canvas based on weapon id
     function drawWeaponHudCanvas(canvas, weaponId, key) {
@@ -10545,9 +10229,9 @@ const ZEUS_AXE_SVG = `
 
       ctx.save();
 
-      // 
+      // ════════════════════════════════════════════════════════════════════
       // CHAIN SCYTHE  — Rojo y Negro
-      // 
+      // ════════════════════════════════════════════════════════════════════
       if (weaponId === 'chain_scythe') {
 
         if (key === 'q') {
@@ -10701,7 +10385,7 @@ const ZEUS_AXE_SVG = `
           ctx.fillStyle = orig; ctx.beginPath(); ctx.arc(10, cy + 10, 13, 0, Math.PI * 2); ctx.fill();
 
         } else {
-          // ── R: Ritual — guada?as fantasma en vortice, multiple orbitas ──
+          // ── R: Ritual — guadañas fantasma en vortice, multiple orbitas ──
 
           // [1] Nucleo del vortice
           const core = ctx.createRadialGradient(cx, cy, 0, cx, cy, 16);
@@ -10719,7 +10403,7 @@ const ZEUS_AXE_SVG = `
           ctx.strokeStyle = P.c3 + '0.12)'; ctx.lineWidth = 0.6;
           ctx.beginPath(); ctx.arc(cx, cy, 26, 0, Math.PI * 2); ctx.stroke();
 
-          // [3] 4 guada?as fantasma orbitando — bien detalladas
+          // [3] 4 guadañas fantasma orbitando — bien detalladas
           const orbAngles = [0, Math.PI * 0.5, Math.PI, Math.PI * 1.5];
           orbAngles.forEach((a, i) => {
             const orb = i < 2 ? 20 : 26; // dos en orbita interna, dos en externa
@@ -10774,9 +10458,9 @@ const ZEUS_AXE_SVG = `
           }
         }
 
-      // 
+      // ════════════════════════════════════════════════════════════════════
       // KATANA
-      // 
+      // ════════════════════════════════════════════════════════════════════
       } else if (weaponId === 'katana') {
         if (key === 'q') {
           // Q: Tormenta de Acero — gran arco de slash con chispas dispersas
@@ -10858,7 +10542,7 @@ const ZEUS_AXE_SVG = `
           ctx.restore();
 
         } else {
-          // R: Kiru — espiral de cortes omnidireccionales + n?cleo de energ?a
+          // R: Kiru — espiral de cortes omnidireccionales + núcleo de energía
           ctx.save();
           // Background energy burst
           const bg = ctx.createRadialGradient(cx, cy, 0, cx, cy, W*0.48);
@@ -10903,11 +10587,11 @@ const ZEUS_AXE_SVG = `
           ctx.restore();
         }
 
-      // 
+      // ════════════════════════════════════════════════════════════════════
       // FALLBACK — dibujo generico por tipo de key
-      // 
+      // ════════════════════════════════════════════════════════════════════
       } else if (weaponId === 'storm_guitar') {
-        // ── STORM GUITAR — Violeta el?ctrico, rayos y ondas sonoras ──
+        // ── STORM GUITAR — Violeta eléctrico, rayos y ondas sonoras ──
         // Palette: purple #b96bff, electric yellow #ffe066, dark bg
         const SG = { bg:'#0d0520', c1:'#b96bff', c2:'rgba(185,107,255,', c3:'#ffe066', c4:'rgba(255,224,102,' };
 
@@ -10950,7 +10634,7 @@ const ZEUS_AXE_SVG = `
           ctx.restore();
 
         } else if (key === 'e') {
-          // E: Solo El?ctrico — dash + estela de rayos y notas
+          // E: Solo Eléctrico — dash + estela de rayos y notas
           ctx.save();
           ctx.shadowBlur = 12; ctx.shadowColor = SG.c1;
 
@@ -11645,7 +11329,7 @@ const ZEUS_AXE_SVG = `
       } else if (currentRun.phase === 'lucky-boss') {
         const pct = Math.max(currentRun.luckyBossHp / currentRun.luckyBossMaxHp, 0) * 100;
         if (bossCardEl) { bossCardEl.style.display = ''; bossCardEl.classList.add('lucky-boss'); }
-        bossNameEl.textContent = '* Invocacion Suertuda';
+        bossNameEl.textContent = '✦ Invocacion Suertuda';
         bossLookEl.textContent = '10% Invocacion Suertuda al caer';
         bossHpBar.style.width = `${pct}%`;
         bossHpText.textContent = `${Math.max(Math.floor(currentRun.luckyBossHp), 0)} HP`;
@@ -11795,7 +11479,7 @@ const ZEUS_AXE_SVG = `
       if (doorChoiceEl) doorChoiceEl.classList.remove('is-active');
       updateArenaUI();
       if (currentRun.stats) currentRun.stats.luckyBossEncountered = true;
-      logArena('!Invocacion Suertuda! Jefe legendario aparecio.');
+      logArena('¡Invocacion Suertuda! Jefe legendario aparecio.');
     }
 
     // ── Spawn transition: spawn enemies directly, no fade needed ──
@@ -12053,7 +11737,7 @@ const ZEUS_AXE_SVG = `
     }
 
     function angleDiff(a, b) {
-      // Returns shortest angular distance [0, Ï€]
+      // Returns shortest angular distance [0, π]
       let d = ((a - b) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2);
       if (d > Math.PI) d = Math.PI * 2 - d;
       return d;
@@ -12071,30 +11755,6 @@ const ZEUS_AXE_SVG = `
           onEnemyKilled(enemy);
         }
       }
-    }
-
-    function applyEnemyDamageDirect(enemy, amount) {
-      if (!enemy || amount <= 0) return;
-      const idx = enemies.indexOf(enemy);
-      if (idx < 0) return;
-      const actualDmg = Math.min(amount, Math.max(enemy.hp, 0));
-      if (currentRun && currentRun.stats) currentRun.stats.damageDealt += actualDmg;
-      enemy.hp -= amount;
-      if (enemy.hp <= 0) {
-        const removed = enemies.splice(idx, 1)[0];
-        if (removed) onEnemyKilled(removed);
-      }
-    }
-
-    function buildArcTest(center, radius, angle, spread) {
-      return (pos) => {
-        const dx = pos.x - center.x;
-        const dy = pos.y - center.y;
-        const dist = Math.hypot(dx, dy);
-        if (dist > radius) return false;
-        const ang = Math.atan2(dy, dx);
-        return angleDiff(ang, angle) <= spread;
-      };
     }
 
     function damageMiniBoss(amount) {
@@ -12134,7 +11794,7 @@ const ZEUS_AXE_SVG = `
           saveState();
           updateSummonX1Button();
           if (currentRun && currentRun.stats) currentRun.stats.luckyBossDefeated = true;
-          logArena('!Obtuviste Invocacion Suertuda!');
+          logArena('¡Obtuviste Invocacion Suertuda!');
         } else {
           logArena('El jefe cayo. Sin recompensa especial esta vez.');
         }
@@ -12154,59 +11814,18 @@ const ZEUS_AXE_SVG = `
 
     function applyArcDamage(center, radius, angle, spread, amount) {
       // angle = midpoint, spread = half-arc (both in radians)
-      const testFn = buildArcTest(center, radius, angle, spread);
+      const testFn = (pos) => {
+        const dx = pos.x - center.x;
+        const dy = pos.y - center.y;
+        const dist = Math.hypot(dx, dy);
+        if (dist > radius) return false;
+        const ang = Math.atan2(dy, dx);
+        return angleDiff(ang, angle) <= spread;
+      };
       if (currentRun.phase === 'horde') {
         damageEnemies(enemy => testFn(enemy), amount);
       }
       damageBossIf(testFn, amount);
-    }
-
-    function applyZeusElectrify(center, radius, angle, spread, tickDamage, sourcePos) {
-      if (!currentRun || currentRun.phase !== 'horde') return;
-      const now = performance.now();
-      const testFn = buildArcTest(center, radius, angle, spread);
-      enemies.forEach((enemy) => {
-        if (!enemy || enemy.hp <= 0) return;
-        if (!testFn(enemy)) return;
-        enemy.electrifiedUntil = Math.max(Number(enemy.electrifiedUntil || 0), now + ZEUS_ELECTRIFY_DURATION_MS);
-        enemy.electrifyTickDamage = Math.max(Number(enemy.electrifyTickDamage || 0), tickDamage);
-        enemy.electrifyNextTickAt = Math.min(Number(enemy.electrifyNextTickAt || now), now + ZEUS_ELECTRIFY_TICK_MS * 0.5);
-        enemy.electrifySource = {
-          x: Number(sourcePos?.x || center.x),
-          y: Number(sourcePos?.y || center.y)
-        };
-      });
-    }
-
-    function updateEnemyElectrify(nowMs) {
-      if (!currentRun || currentRun.phase !== 'horde') return;
-      for (let i = enemies.length - 1; i >= 0; i--) {
-        const enemy = enemies[i];
-        if (!enemy || enemy.hp <= 0) continue;
-        const until = Number(enemy.electrifiedUntil || 0);
-        if (until <= nowMs) {
-          enemy.electrifiedUntil = 0;
-          enemy.electrifyTickDamage = 0;
-          enemy.electrifyNextTickAt = 0;
-          enemy.electrifySource = null;
-          continue;
-        }
-        if (!enemy.electrifyNextTickAt || nowMs >= enemy.electrifyNextTickAt) {
-          enemy.electrifyNextTickAt = nowMs + ZEUS_ELECTRIFY_TICK_MS;
-          const dmg = Number(enemy.electrifyTickDamage || 0);
-          if (dmg > 0) {
-            const src = enemy.electrifySource || { x: enemy.x - 20, y: enemy.y - 8 };
-            addEffect({
-              type: 'sg-e-bolt',
-              from: { x: src.x, y: src.y },
-              to: { x: enemy.x, y: enemy.y },
-              aim: Math.atan2(enemy.y - src.y, enemy.x - src.x),
-              duration: 0.12
-            });
-            applyEnemyDamageDirect(enemy, dmg);
-          }
-        }
-      }
     }
 
     // More accurate: test if angle falls within an arc range [startA, endA]
@@ -12215,7 +11834,7 @@ const ZEUS_AXE_SVG = `
     function applyArcRangeDamage(center, radius, startA, endA, amount) {
       // Find mid-angle and half-spread of the shorter arc
       let diff = endA - startA;
-      // Wrap diff to [-Ï€, Ï€] so we always take the short arc
+      // Wrap diff to [-π, π] so we always take the short arc
       while (diff >  Math.PI) diff -= Math.PI * 2;
       while (diff < -Math.PI) diff += Math.PI * 2;
       const mid    = startA + diff * 0.5;   // center of the arc
@@ -12406,390 +12025,6 @@ const ZEUS_AXE_SVG = `
       return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || '56, 242, 255';
     }
 
-    function getChainScytheFrameIndex() {
-      if (!CHAIN_SCYTHE_SPRITES.length) return 0;
-      const now = performance.now();
-      const attackElapsed = now - chainScytheLastM1At;
-      if (attackElapsed >= 0 && attackElapsed < CHAIN_SCYTHE_ATTACK_DURATION_MS) {
-        const idx = Math.max(
-          0,
-          Math.min(
-            CHAIN_SCYTHE_ATTACK_SEQUENCE.length - 1,
-            Math.floor(attackElapsed / CHAIN_SCYTHE_FRAME_STEP_MS)
-          )
-        );
-        return CHAIN_SCYTHE_ATTACK_SEQUENCE[idx];
-      }
-      const idleIndex = Math.floor((now * 0.0065) % CHAIN_SCYTHE_IDLE_SEQUENCE.length);
-      return CHAIN_SCYTHE_IDLE_SEQUENCE[idleIndex];
-    }
-
-    function drawChainScytheFrame(ctx, frameIndex, drawW, drawH) {
-      const frame = CHAIN_SCYTHE_SPRITES[frameIndex];
-      const fw = Number(frame?.naturalWidth || frame?.width || 0);
-      const fh = Number(frame?.naturalHeight || frame?.height || 0);
-      if (!frame || fw <= 0 || fh <= 0) return false;
-      ctx.drawImage(frame, -drawW * 0.5, -drawH * 0.5, drawW, drawH);
-      return true;
-    }
-
-    function getTigerGlovesFrameIndex() {
-      if (!TIGER_GLOVES_SPRITES.length) return 0;
-      const now = performance.now();
-      const attackElapsed = now - tigerGlovesLastM1At;
-      if (attackElapsed >= 0 && attackElapsed < 440) {
-        const p = Math.min(1, attackElapsed / 440);
-        return Math.max(0, Math.min(TIGER_GLOVES_SPRITES.length - 1, Math.floor(p * TIGER_GLOVES_SPRITES.length)));
-      }
-      const idleCycle = 4;
-      const idleIdx = Math.floor((now * 0.005) % idleCycle);
-      return idleIdx;
-    }
-
-    function getZeusAxeFrameIndex() {
-      if (!ZEUS_AXE_SPRITES.length) return 0;
-      const now = performance.now();
-      const attackElapsed = now - zeusAxeLastM1At;
-      if (attackElapsed >= 0 && attackElapsed < ZEUS_AXE_ATTACK_DURATION_MS) {
-        const seqIndex = Math.max(
-          0,
-          Math.min(
-            ZEUS_AXE_ATTACK_SEQUENCE.length - 1,
-            Math.floor(attackElapsed / ZEUS_AXE_FRAME_STEP_MS)
-          )
-        );
-        return ZEUS_AXE_ATTACK_SEQUENCE[seqIndex];
-      }
-      const idleIndex = Math.floor((now * 0.004) % ZEUS_AXE_IDLE_FRAMES.length);
-      return ZEUS_AXE_IDLE_FRAMES[idleIndex];
-    }
-
-    function isZeusTileCandidate(r, g, b, a) {
-      if (a < 28) return false;
-      const max = Math.max(r, g, b);
-      const min = Math.min(r, g, b);
-      const sat = max - min;
-      if (sat > 26) return false;
-      return max >= 120;
-    }
-
-    function prepareZeusAxeRenderFrame(frameIndex) {
-      const img = ZEUS_AXE_SPRITES[frameIndex];
-      if (!img || !img.complete || img.naturalWidth <= 0 || img.naturalHeight <= 0) return null;
-      if (ZEUS_AXE_RENDER_FRAMES[frameIndex]) return ZEUS_AXE_RENDER_FRAMES[frameIndex];
-      try {
-        const c = document.createElement('canvas');
-        c.width = img.naturalWidth;
-        c.height = img.naturalHeight;
-        const cx = c.getContext('2d', { willReadFrequently: true });
-        cx.drawImage(img, 0, 0);
-        const frameData = cx.getImageData(0, 0, c.width, c.height);
-        const data = frameData.data;
-        const w = c.width;
-        const h = c.height;
-
-        const q = new Uint32Array(w * h);
-        let qh = 0, qt = 0;
-        const mark = new Uint8Array(w * h);
-        const push = (x, y) => {
-          if (x < 0 || y < 0 || x >= w || y >= h) return;
-          const idx = y * w + x;
-          if (mark[idx]) return;
-          const p = idx * 4;
-          if (!isZeusTileCandidate(data[p], data[p + 1], data[p + 2], data[p + 3])) return;
-          mark[idx] = 1;
-          q[qt++] = idx;
-        };
-
-        for (let x = 0; x < w; x++) {
-          push(x, 0);
-          push(x, h - 1);
-        }
-        for (let y = 1; y < h - 1; y++) {
-          push(0, y);
-          push(w - 1, y);
-        }
-
-        while (qh < qt) {
-          const idx = q[qh++];
-          const x = idx % w;
-          const y = Math.floor(idx / w);
-          const p = idx * 4;
-          data[p + 3] = 0;
-          push(x - 1, y);
-          push(x + 1, y);
-          push(x, y - 1);
-          push(x, y + 1);
-        }
-
-        // Keep only the dominant connected alpha component to avoid detached "double axe" ghosts.
-        const aMark = new Uint8Array(w * h);
-        let bestStart = -1;
-        let bestCount = 0;
-        const alphaThreshold = 110;
-        for (let i = 0; i < w * h; i++) {
-          if (aMark[i]) continue;
-          const p = i * 4;
-          if (data[p + 3] < alphaThreshold) continue;
-          let count = 0;
-          let localStart = i;
-          qh = 0;
-          qt = 0;
-          q[qt++] = i;
-          aMark[i] = 1;
-          while (qh < qt) {
-            const idx = q[qh++];
-            count++;
-            const x = idx % w;
-            const y = Math.floor(idx / w);
-            const visit = (nx, ny) => {
-              if (nx < 0 || ny < 0 || nx >= w || ny >= h) return;
-              const n = ny * w + nx;
-              if (aMark[n]) return;
-              const np = n * 4;
-              if (data[np + 3] < alphaThreshold) return;
-              aMark[n] = 1;
-              q[qt++] = n;
-            };
-            visit(x - 1, y);
-            visit(x + 1, y);
-            visit(x, y - 1);
-            visit(x, y + 1);
-          }
-          if (count > bestCount) {
-            bestCount = count;
-            bestStart = localStart;
-          }
-        }
-
-        if (bestStart >= 0) {
-          const keep = new Uint8Array(w * h);
-          qh = 0;
-          qt = 0;
-          q[qt++] = bestStart;
-          keep[bestStart] = 1;
-          while (qh < qt) {
-            const idx = q[qh++];
-            const x = idx % w;
-            const y = Math.floor(idx / w);
-            const visit = (nx, ny) => {
-              if (nx < 0 || ny < 0 || nx >= w || ny >= h) return;
-              const n = ny * w + nx;
-              if (keep[n]) return;
-              const np = n * 4;
-              if (data[np + 3] < alphaThreshold) return;
-              keep[n] = 1;
-              q[qt++] = n;
-            };
-            visit(x - 1, y);
-            visit(x + 1, y);
-            visit(x, y - 1);
-            visit(x, y + 1);
-          }
-          for (let i = 0; i < w * h; i++) {
-            if (keep[i]) continue;
-            const p = i * 4;
-            if (data[p + 3] > 0) data[p + 3] = 0;
-          }
-        }
-
-        cx.putImageData(frameData, 0, 0);
-        ZEUS_AXE_RENDER_FRAMES[frameIndex] = c;
-        return c;
-      } catch (_) {
-        return img;
-      }
-    }
-
-    function ensureZeusAxeFrameMeta(frameIndex) {
-      const img = prepareZeusAxeRenderFrame(frameIndex) || ZEUS_AXE_SPRITES[frameIndex];
-      const iw = Number(img?.naturalWidth || img?.width || 0);
-      const ih = Number(img?.naturalHeight || img?.height || 0);
-      if (!img || iw <= 0 || ih <= 0) return null;
-      if (ZEUS_AXE_FRAME_META[frameIndex]) return ZEUS_AXE_FRAME_META[frameIndex];
-      try {
-        const c = document.createElement('canvas');
-        c.width = iw;
-        c.height = ih;
-        const cx = c.getContext('2d', { willReadFrequently: true });
-        cx.drawImage(img, 0, 0);
-        const data = cx.getImageData(0, 0, c.width, c.height).data;
-        let minX = c.width, minY = c.height, maxX = -1, maxY = -1;
-        for (let y = 0; y < c.height; y++) {
-          for (let x = 0; x < c.width; x++) {
-            const a = data[(y * c.width + x) * 4 + 3];
-            if (a > 64) {
-              if (x < minX) minX = x;
-              if (y < minY) minY = y;
-              if (x > maxX) maxX = x;
-              if (y > maxY) maxY = y;
-            }
-          }
-        }
-        if (maxX < minX || maxY < minY) {
-          minX = 0; minY = 0; maxX = c.width - 1; maxY = c.height - 1;
-        }
-        const meta = {
-          minX, minY, maxX, maxY,
-          centerX: (minX + maxX) * 0.5,
-          centerY: (minY + maxY) * 0.5
-        };
-        ZEUS_AXE_FRAME_META[frameIndex] = meta;
-        if (!zeusAxeFrameRef) zeusAxeFrameRef = { centerX: meta.centerX, centerY: meta.centerY };
-        return meta;
-      } catch (_) {
-        return null;
-      }
-    }
-
-    function drawZeusAxeFrame(ctx, frameIndex, drawW, drawH) {
-      const frame = prepareZeusAxeRenderFrame(frameIndex) || ZEUS_AXE_SPRITES[frameIndex];
-      const fw = Number(frame?.naturalWidth || frame?.width || 0);
-      const fh = Number(frame?.naturalHeight || frame?.height || 0);
-      if (!frame || fw <= 0 || fh <= 0) return false;
-      const meta = ensureZeusAxeFrameMeta(frameIndex);
-      let dx = 0;
-      let dy = 0;
-      if (meta && zeusAxeFrameRef) {
-        dx = ((meta.centerX - zeusAxeFrameRef.centerX) / fw) * drawW;
-        dy = ((meta.centerY - zeusAxeFrameRef.centerY) / fh) * drawH;
-      }
-      if (meta) {
-        const sw = Math.max(1, meta.maxX - meta.minX + 1);
-        const sh = Math.max(1, meta.maxY - meta.minY + 1);
-        ctx.drawImage(
-          frame,
-          meta.minX, meta.minY, sw, sh,
-          -drawW * 0.5 - dx, -drawH * 0.5 - dy, drawW, drawH
-        );
-      } else {
-        ctx.drawImage(frame, -drawW * 0.5 - dx, -drawH * 0.5 - dy, drawW, drawH);
-      }
-      return true;
-    }
-
-    function ensureTigerGlovesFrameMeta(frameIndex) {
-      const img = TIGER_GLOVES_SPRITES[frameIndex];
-      if (!img || !img.complete || img.naturalWidth <= 0 || img.naturalHeight <= 0) return null;
-      if (TIGER_GLOVES_FRAME_META[frameIndex]) return TIGER_GLOVES_FRAME_META[frameIndex];
-      try {
-        const c = document.createElement('canvas');
-        c.width = img.naturalWidth;
-        c.height = img.naturalHeight;
-        const cx = c.getContext('2d', { willReadFrequently: true });
-        cx.drawImage(img, 0, 0);
-        const data = cx.getImageData(0, 0, c.width, c.height).data;
-        let minX = c.width, minY = c.height, maxX = -1, maxY = -1;
-        for (let y = 0; y < c.height; y++) {
-          for (let x = 0; x < c.width; x++) {
-            const a = data[(y * c.width + x) * 4 + 3];
-            if (a > 12) {
-              if (x < minX) minX = x;
-              if (y < minY) minY = y;
-              if (x > maxX) maxX = x;
-              if (y > maxY) maxY = y;
-            }
-          }
-        }
-        if (maxX < minX || maxY < minY) {
-          minX = 0; minY = 0; maxX = c.width - 1; maxY = c.height - 1;
-        }
-        const meta = {
-          minX, minY, maxX, maxY,
-          centerX: (minX + maxX) * 0.5,
-          centerY: (minY + maxY) * 0.5
-        };
-        TIGER_GLOVES_FRAME_META[frameIndex] = meta;
-        if (!tigerGlovesFrameRef) tigerGlovesFrameRef = { centerX: meta.centerX, centerY: meta.centerY };
-        return meta;
-      } catch (_) {
-        return null;
-      }
-    }
-
-    function drawTigerGlovesFrame(ctx, frameIndex, drawW, drawH) {
-      const frame = TIGER_GLOVES_SPRITES[frameIndex];
-      if (!frame || !frame.complete || frame.naturalWidth <= 0 || frame.naturalHeight <= 0) return false;
-      const meta = ensureTigerGlovesFrameMeta(frameIndex);
-      let dx = 0;
-      let dy = 0;
-      if (meta && tigerGlovesFrameRef) {
-        dx = ((meta.centerX - tigerGlovesFrameRef.centerX) / frame.naturalWidth) * drawW;
-        dy = ((meta.centerY - tigerGlovesFrameRef.centerY) / frame.naturalHeight) * drawH;
-      }
-      ctx.drawImage(frame, -drawW * 0.5 - dx, -drawH * 0.5 - dy, drawW, drawH);
-      return true;
-    }
-
-    function refillTigerGlovesM1SfxBag() {
-      tigerGlovesM1SfxBag = tigerGlovesM1SfxPool.map((_, i) => i);
-      for (let i = tigerGlovesM1SfxBag.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        const tmp = tigerGlovesM1SfxBag[i];
-        tigerGlovesM1SfxBag[i] = tigerGlovesM1SfxBag[j];
-        tigerGlovesM1SfxBag[j] = tmp;
-      }
-    }
-
-    function refillZeusAxeM1SfxBag() {
-      zeusAxeM1SfxBag = zeusAxeM1SfxPool.map((_, i) => i);
-      for (let i = zeusAxeM1SfxBag.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        const tmp = zeusAxeM1SfxBag[i];
-        zeusAxeM1SfxBag[i] = zeusAxeM1SfxBag[j];
-        zeusAxeM1SfxBag[j] = tmp;
-      }
-    }
-
-    function playZeusAxeM1Sfx() {
-      if (!zeusAxeM1SfxPool.length) return;
-      if (!zeusAxeM1SfxBag.length) refillZeusAxeM1SfxBag();
-      const idx = zeusAxeM1SfxBag.pop();
-      const srcAudio = zeusAxeM1SfxPool[idx];
-      if (!srcAudio) return;
-      try {
-        const a = srcAudio.cloneNode();
-        a.volume = srcAudio.volume;
-        a.play().catch(() => {});
-      } catch (_) {}
-    }
-
-    function playTigerGlovesM1Sfx() {
-      if (!tigerGlovesM1SfxPool.length) return;
-      if (!tigerGlovesM1SfxBag.length) refillTigerGlovesM1SfxBag();
-      const idx = tigerGlovesM1SfxBag.pop();
-      const srcAudio = tigerGlovesM1SfxPool[idx];
-      if (!srcAudio) return;
-      try {
-        const a = srcAudio.cloneNode();
-        a.volume = srcAudio.volume;
-        a.play().catch(() => {});
-      } catch (_) {}
-    }
-
-    function refillChainScytheM1SfxBag() {
-      chainScytheM1SfxBag = chainScytheM1SfxPool.map((_, i) => i);
-      for (let i = chainScytheM1SfxBag.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        const tmp = chainScytheM1SfxBag[i];
-        chainScytheM1SfxBag[i] = chainScytheM1SfxBag[j];
-        chainScytheM1SfxBag[j] = tmp;
-      }
-    }
-
-    function playChainScytheM1Sfx() {
-      if (!chainScytheM1SfxPool.length) return;
-      if (!chainScytheM1SfxBag.length) refillChainScytheM1SfxBag();
-      const idx = chainScytheM1SfxBag.pop();
-      const srcAudio = chainScytheM1SfxPool[idx];
-      if (!srcAudio) return;
-      try {
-        const a = srcAudio.cloneNode();
-        a.volume = srcAudio.volume;
-        a.play().catch(() => {});
-      } catch (_) {}
-    }
-
     function drawPlayer(ctx, x, y, size) {
       const light = getCssVar('--char-light-rgb');
       const glow = getCssVar('--char-glow-rgb');
@@ -12814,106 +12049,84 @@ const ZEUS_AXE_SVG = `
       const weapon = getActiveWeaponId();
       const aim = lastAim ? Math.atan2(lastAim.y - y, lastAim.x - x) : -Math.PI * 0.3;
 
-      if (weapon === 'zeus_axe') {
-        const frameIndex = getZeusAxeFrameIndex();
-        const frame = ZEUS_AXE_SPRITES[frameIndex];
-        const ready = frame && frame.complete && frame.naturalWidth > 0 && frame.naturalHeight > 0;
-        if (ready) {
+      if (weapon === 'chain_scythe') {
+        // Guadaña con cadena: dibuja la guadaña en la mano derecha del personaje
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(aim);
+
+        const now2 = performance.now();
+        // Pequeña animación de idle: la cadena cuelga/oscila
+        const idle = Math.sin(now2 * 0.002) * 0.12;
+        ctx.rotate(idle);
+
+        ctx.shadowBlur = 14;
+        ctx.shadowColor = '#cc0014';
+
+        // Mango corto (sale desde el centro del personaje)
+        const handleLen = size * 1.1;
+        ctx.strokeStyle = 'rgba(200,210,230,0.9)';
+        ctx.lineWidth = 2.5;
+        ctx.lineCap = 'round';
+        ctx.beginPath();
+        ctx.moveTo(size * 0.3, 0);
+        ctx.lineTo(size * 0.3 + handleLen, 0);
+        ctx.stroke();
+
+        // Hoja curva de guadaña en la punta del mango
+        ctx.save();
+        ctx.translate(size * 0.3 + handleLen, 0);
+        ctx.strokeStyle = 'rgba(232,0,20,0.92)';
+        ctx.lineWidth = 2.8;
+        ctx.lineCap = 'round';
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.bezierCurveTo(12, -18, 28, -10, 18, 6);
+        ctx.stroke();
+        // Filo brillante
+        ctx.strokeStyle = 'rgba(255,160,160,0.55)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.bezierCurveTo(10, -14, 24, -8, 15, 5);
+        ctx.stroke();
+        // Micro glow en la punta
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = '#ff1030';
+        ctx.fillStyle = 'rgba(255,20,40,0.5)';
+        ctx.beginPath();
+        ctx.arc(18, 6, 3.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+
+        // Eslabones de cadena colgando desde la guardia
+        const chainStart = { x: size * 0.3 + handleLen * 0.35, y: 0 };
+        const swing2 = Math.sin(now2 * 0.0025) * 12;
+        ctx.strokeStyle = 'rgba(160,170,200,0.7)';
+        ctx.lineWidth = 1.5;
+        ctx.setLineDash([4, 2]);
+        ctx.beginPath();
+        ctx.moveTo(chainStart.x, chainStart.y);
+        ctx.quadraticCurveTo(chainStart.x + 10, chainStart.y + swing2 + 14, chainStart.x + 5, chainStart.y + swing2 + 26);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        // Eslabones individuales a lo largo de la cadena
+        ctx.fillStyle = 'rgba(180,190,215,0.75)';
+        for (let i = 0; i < 3; i++) {
+          const t3 = (i + 0.5) / 3;
+          const lx2 = chainStart.x + (5 - chainStart.x) * t3 + chainStart.x * (1 - t3);
+          const ly2 = (swing2 + 26) * t3;
           ctx.save();
-          ctx.translate(x, y);
-          ctx.rotate(aim);
-          ctx.shadowBlur = 14;
-          ctx.shadowColor = 'rgba(86, 223, 255, 0.84)';
-          const w = size * 2.0;
-          const h = size * 2.0;
-          const xOff = size * 1.12;
-          ctx.translate(xOff, 0);
-          drawZeusAxeFrame(ctx, frameIndex, w, h);
-          ctx.restore();
-        } else {
-          ctx.save();
-          ctx.translate(x, y);
-          ctx.rotate(aim);
-          ctx.shadowBlur = 14;
-          ctx.shadowColor = 'rgba(86,223,255,0.7)';
-          ctx.fillStyle = 'rgba(120,220,255,0.92)';
+          ctx.translate(lx2 + chainStart.x * (1 - t3) * 0.1, chainStart.y + ly2);
+          ctx.rotate(i % 2 === 0 ? 0.6 : -0.6);
           ctx.beginPath();
-          ctx.roundRect(size * 0.24, -size * 0.22, size * 1.4, size * 0.44, size * 0.16);
+          ctx.ellipse(0, 0, 3, 1.8, 0, 0, Math.PI * 2);
           ctx.fill();
           ctx.restore();
         }
 
-      } else if (weapon === 'tiger_gloves') {
-        const frameIndex = getTigerGlovesFrameIndex();
-        const frame = TIGER_GLOVES_SPRITES[frameIndex];
-        const ready = frame && frame.complete && frame.naturalWidth > 0 && frame.naturalHeight > 0;
-        const glovesAim = aim + Math.PI; // Align sprite native facing with gameplay aim.
-        if (ready) {
-          ctx.save();
-          ctx.translate(x, y);
-          ctx.rotate(glovesAim);
-          ctx.shadowBlur = 16;
-          ctx.shadowColor = 'rgba(255, 138, 74, 0.8)';
-          const w = size * 2.0;
-          const h = size * 1.75;
-          const yOff = size * 0.44;
-          const xOff = size * 0.05;
-
-          ctx.save();
-          ctx.translate(xOff, -yOff);
-          drawTigerGlovesFrame(ctx, frameIndex, w, h);
-          ctx.restore();
-
-          ctx.save();
-          ctx.translate(xOff, yOff);
-          ctx.scale(1, -1);
-          drawTigerGlovesFrame(ctx, frameIndex, w, h);
-          ctx.restore();
-
-          ctx.restore();
-        } else {
-          // Fallback in case sprites are still loading.
-          ctx.save();
-          ctx.translate(x, y);
-          ctx.rotate(glovesAim);
-          ctx.shadowBlur = 12;
-          ctx.shadowColor = 'rgba(255,130,70,0.7)';
-          ctx.fillStyle = 'rgba(255,150,84,0.9)';
-          ctx.beginPath();
-          ctx.roundRect(size * 0.1, -size * 0.4, size * 1.25, size * 0.8, size * 0.2);
-          ctx.fill();
-          ctx.restore();
-        }
-
-            } else if (weapon === 'chain_scythe') {
-        const frameIndex = getChainScytheFrameIndex();
-        const frame = CHAIN_SCYTHE_SPRITES[frameIndex];
-        const ready = frame && frame.complete && frame.naturalWidth > 0 && frame.naturalHeight > 0;
-        const scytheAim = aim;
-        if (ready) {
-          ctx.save();
-          ctx.translate(x, y);
-          ctx.rotate(scytheAim);
-          ctx.shadowBlur = 15;
-          ctx.shadowColor = 'rgba(255,76,64,0.78)';
-          const w = size * 4.1;
-          const h = size * 4.1;
-          const xOff = size * 1.18;
-          ctx.translate(xOff, 0);
-          drawChainScytheFrame(ctx, frameIndex, w, h);
-          ctx.restore();
-        } else {
-          ctx.save();
-          ctx.translate(x, y);
-          ctx.rotate(scytheAim);
-          ctx.shadowBlur = 12;
-          ctx.shadowColor = 'rgba(255,92,80,0.72)';
-          ctx.fillStyle = 'rgba(220,84,72,0.9)';
-          ctx.beginPath();
-          ctx.roundRect(size * 0.2, -size * 0.2, size * 1.45, size * 0.4, size * 0.14);
-          ctx.fill();
-          ctx.restore();
-        }
+        ctx.restore();
 
       } else if (weapon === 'storm_guitar') {
         // Storm Guitar — purple electric guitar with lightning
@@ -13848,7 +13061,6 @@ const ZEUS_AXE_SVG = `
         x: w * (currentRun.bossPos ? currentRun.bossPos.x : 0.72),
         y: h * (currentRun.bossPos ? currentRun.bossPos.y : 0.38)
       };
-      updateEnemyElectrify(now);
       const aliveEnemies = enemies.filter(enemy => enemy.hp > 0);
       const focusEnemy = aliveEnemies[0];
 
@@ -13865,13 +13077,11 @@ const ZEUS_AXE_SVG = `
       if (currentRun.phase === 'horde') {
         const chaseSpeed = 90 + scaleIndex * 15;
         aliveEnemies.forEach(enemy => {
-          const slowed = Number(enemy.electrifiedUntil || 0) > now;
-          const speedMul = slowed ? ZEUS_ELECTRIFY_SLOW_MUL : 1;
           const dx = playerPos.x - enemy.x;
           const dy = playerPos.y - enemy.y;
           const dist = Math.hypot(dx, dy) || 1;
-          enemy.x += (dx / dist) * chaseSpeed * speedMul * dt;
-          enemy.y += (dy / dist) * chaseSpeed * speedMul * dt;
+          enemy.x += (dx / dist) * chaseSpeed * dt;
+          enemy.y += (dy / dist) * chaseSpeed * dt;
           enemy.x = Math.min(w * 0.95, Math.max(w * 0.05, enemy.x));
           enemy.y = Math.min(h * 0.88, Math.max(h * 0.12, enemy.y));
         });
@@ -14124,7 +13334,7 @@ const ZEUS_AXE_SVG = `
         }
 
         if (effect.type === 'cs-ritual-vortex') {
-          // Vortice de guada?as orbitando — expansion progresiva
+          // Vortice de guadañas orbitando — expansion progresiva
           arenaCtx.save();
           arenaCtx.shadowBlur = 18; arenaCtx.shadowColor = '#e8001a';
           const orbitR = 50 + p * 120;
@@ -14726,156 +13936,6 @@ const ZEUS_AXE_SVG = `
         // ── ORIGINAL effects ─────────────────────────────────────────
         const pOrig = Math.min(effect.t / effect.duration, 1);
         // ── KATANA M1 swing ──────────────────────────────────────────
-        if (effect.type === 'tg-claw-swipe') {
-          const angle = effect.startAngle + (effect.endAngle - effect.startAngle) * pOrig;
-          const alpha = 0.92 - pOrig * 0.72;
-          const ccw = effect.endAngle < effect.startAngle;
-          const laneShift = Number(effect.lane || 0) * 8;
-          arenaCtx.save();
-          arenaCtx.translate(effect.x, effect.y);
-          arenaCtx.rotate(effect.aim || 0);
-          arenaCtx.translate(0, laneShift);
-          arenaCtx.rotate(-(effect.aim || 0));
-          arenaCtx.shadowBlur = 18;
-          arenaCtx.shadowColor = 'rgba(255,128,68,0.9)';
-          for (let k = 0; k < 3; k++) {
-            const rr = effect.radius - 8 + k * 7;
-            arenaCtx.strokeStyle = `rgba(255,${210 - k * 22},${120 - k * 18},${alpha * (0.72 - k * 0.15)})`;
-            arenaCtx.lineWidth = 2.9 - k * 0.6;
-            arenaCtx.lineCap = 'round';
-            arenaCtx.beginPath();
-            arenaCtx.arc(0, 0, rr, effect.startAngle, angle, ccw);
-            arenaCtx.stroke();
-          }
-          const tipX = Math.cos(angle) * (effect.radius + 4);
-          const tipY = Math.sin(angle) * (effect.radius + 4);
-          const tipGrad = arenaCtx.createRadialGradient(tipX, tipY, 0, tipX, tipY, 10);
-          tipGrad.addColorStop(0, `rgba(255,245,225,${alpha})`);
-          tipGrad.addColorStop(1, 'rgba(255,140,80,0)');
-          arenaCtx.fillStyle = tipGrad;
-          arenaCtx.beginPath();
-          arenaCtx.arc(tipX, tipY, 10, 0, Math.PI * 2);
-          arenaCtx.fill();
-          arenaCtx.restore();
-        }
-        if (effect.type === 'tg-rake-burst') {
-          arenaCtx.save();
-          arenaCtx.shadowBlur = 20;
-          arenaCtx.shadowColor = 'rgba(255,140,82,0.95)';
-          const spikes = 7;
-          for (let i = 0; i < spikes; i++) {
-            const a = (effect.aim || 0) - Math.PI * 0.45 + (i / (spikes - 1)) * Math.PI * 0.9;
-            const len = effect.radius * (0.5 + pOrig * 0.5) * (0.86 + i * 0.035);
-            arenaCtx.strokeStyle = `rgba(255,${196 - i * 8},${88 - i * 4},${0.85 - pOrig * 0.75})`;
-            arenaCtx.lineWidth = 2.6 - i * 0.16;
-            arenaCtx.lineCap = 'round';
-            arenaCtx.beginPath();
-            arenaCtx.moveTo(effect.x + Math.cos(a) * 14, effect.y + Math.sin(a) * 14);
-            arenaCtx.lineTo(effect.x + Math.cos(a) * len, effect.y + Math.sin(a) * len);
-            arenaCtx.stroke();
-          }
-          const core = arenaCtx.createRadialGradient(effect.x, effect.y, 0, effect.x, effect.y, effect.radius * 0.46);
-          core.addColorStop(0, `rgba(255,245,230,${0.92 - pOrig * 0.8})`);
-          core.addColorStop(0.5, `rgba(255,165,90,${0.5 - pOrig * 0.42})`);
-          core.addColorStop(1, 'rgba(255,120,70,0)');
-          arenaCtx.fillStyle = core;
-          arenaCtx.beginPath();
-          arenaCtx.arc(effect.x, effect.y, effect.radius * 0.46, 0, Math.PI * 2);
-          arenaCtx.fill();
-          arenaCtx.restore();
-        }
-
-        if (effect.type === 'za-m1-arc') {
-          const angle = effect.startAngle + (effect.endAngle - effect.startAngle) * pOrig;
-          const alpha = 0.95 - pOrig * 0.68;
-          const ccw = effect.endAngle < effect.startAngle;
-          const comboBoost = 1 + (Number(effect.combo || 0) * 0.05);
-          const rMain = effect.radius * (0.9 + 0.08 * comboBoost);
-          arenaCtx.save();
-          arenaCtx.shadowBlur = 22;
-          arenaCtx.shadowColor = 'rgba(95,224,255,0.92)';
-          // Main electric body
-          arenaCtx.strokeStyle = `rgba(95,224,255,${alpha * 0.34})`;
-          arenaCtx.lineWidth = 16;
-          arenaCtx.lineCap = 'round';
-          arenaCtx.beginPath();
-          arenaCtx.arc(effect.x, effect.y, rMain, effect.startAngle, angle, ccw);
-          arenaCtx.stroke();
-          // Bright edge
-          arenaCtx.strokeStyle = `rgba(186,242,255,${alpha})`;
-          arenaCtx.lineWidth = 3.6;
-          arenaCtx.beginPath();
-          arenaCtx.arc(effect.x, effect.y, rMain, effect.startAngle, angle, ccw);
-          arenaCtx.stroke();
-          // Gold accent
-          arenaCtx.strokeStyle = `rgba(255,215,120,${alpha * 0.62})`;
-          arenaCtx.lineWidth = 1.2;
-          arenaCtx.beginPath();
-          arenaCtx.arc(effect.x, effect.y, rMain - 6, effect.startAngle + (ccw ? -0.04 : 0.04), angle + (ccw ? 0.04 : -0.04), ccw);
-          arenaCtx.stroke();
-          // Lightning ticks along the arc
-          const tickCount = 8;
-          for (let i = 0; i < tickCount; i++) {
-            const t = (i + 0.35) / tickCount;
-            const a = effect.startAngle + (angle - effect.startAngle) * t;
-            const side = (i % 2 === 0 ? 1 : -1);
-            const nx = Math.cos(a + Math.PI * 0.5 * side);
-            const ny = Math.sin(a + Math.PI * 0.5 * side);
-            const sx = effect.x + Math.cos(a) * (rMain - 1);
-            const sy = effect.y + Math.sin(a) * (rMain - 1);
-            const len = (9 + (i % 3) * 3) * (1 - pOrig * 0.62);
-            arenaCtx.strokeStyle = `rgba(130,230,255,${alpha * 0.78})`;
-            arenaCtx.lineWidth = 1.4;
-            arenaCtx.beginPath();
-            arenaCtx.moveTo(sx, sy);
-            arenaCtx.lineTo(sx + nx * len, sy + ny * len);
-            arenaCtx.stroke();
-          }
-          // Tip ignition
-          const tipX = effect.x + Math.cos(angle) * rMain;
-          const tipY = effect.y + Math.sin(angle) * rMain;
-          const tipGlow = arenaCtx.createRadialGradient(tipX, tipY, 0, tipX, tipY, 18);
-          tipGlow.addColorStop(0, `rgba(255,255,245,${alpha})`);
-          tipGlow.addColorStop(0.4, `rgba(145,235,255,${alpha * 0.75})`);
-          tipGlow.addColorStop(1, 'rgba(95,224,255,0)');
-          arenaCtx.fillStyle = tipGlow;
-          arenaCtx.beginPath();
-          arenaCtx.arc(tipX, tipY, 18, 0, Math.PI * 2);
-          arenaCtx.fill();
-          arenaCtx.restore();
-        }
-
-        if (effect.type === 'za-m1-shock') {
-          const alpha = 0.86 - pOrig * 0.72;
-          const baseR = effect.radius * (0.24 + pOrig * 0.76);
-          arenaCtx.save();
-          arenaCtx.shadowBlur = 16;
-          arenaCtx.shadowColor = 'rgba(100,218,255,0.9)';
-          arenaCtx.strokeStyle = `rgba(100,218,255,${alpha})`;
-          arenaCtx.lineWidth = 2.4;
-          arenaCtx.beginPath();
-          arenaCtx.arc(effect.x, effect.y, baseR, 0, Math.PI * 2);
-          arenaCtx.stroke();
-          arenaCtx.strokeStyle = `rgba(255,236,180,${alpha * 0.48})`;
-          arenaCtx.lineWidth = 1.2;
-          arenaCtx.beginPath();
-          arenaCtx.arc(effect.x, effect.y, baseR * 0.64, 0, Math.PI * 2);
-          arenaCtx.stroke();
-          const rays = 12 + (Number(effect.combo || 0) * 2);
-          for (let i = 0; i < rays; i++) {
-            const a = (i / rays) * Math.PI * 2 + pOrig * 0.3;
-            const r1 = baseR * 0.42;
-            const r2 = baseR * (0.76 + ((i % 3) * 0.08));
-            arenaCtx.strokeStyle = `rgba(120,228,255,${alpha * 0.8})`;
-            arenaCtx.lineWidth = 1.1;
-            arenaCtx.beginPath();
-            arenaCtx.moveTo(effect.x + Math.cos(a) * r1, effect.y + Math.sin(a) * r1);
-            arenaCtx.lineTo(effect.x + Math.cos(a) * r2, effect.y + Math.sin(a) * r2);
-            arenaCtx.stroke();
-          }
-          arenaCtx.restore();
-        }
-
         if (effect.type === 'katana-swing') {
           // Interpolate blade tip from start to end
           const angle = effect.startAngle + (effect.endAngle - effect.startAngle) * pOrig;
@@ -15305,8 +14365,8 @@ const ZEUS_AXE_SVG = `
           const badge = document.createElement('div');
           badge.style.cssText = 'width:100%;text-align:center;font-size:0.68rem;color:#ffd700;margin-top:0.3rem;';
           badge.textContent = stats.luckyBossDefeated
-            ? '* Invocacion Suertuda derrotada'
-            : '* Invocacion Suertuda encontrada';
+            ? '✦ Invocación Suertuda derrotada'
+            : '✦ Invocación Suertuda encontrada';
           doorsPath.appendChild(badge);
         }
       }
@@ -15356,7 +14416,7 @@ const ZEUS_AXE_SVG = `
         const rewardText = stats.endReward || '—';
         rewardBlock.innerHTML = `
           <div class="run-reward-row" style="border-color:rgba(56,242,255,0.25);background:rgba(56,242,255,0.06)">
-            <span class="run-reward-icon">ðŸ†</span>
+            <span class="run-reward-icon">🏆</span>
             <span class="run-reward-text">${rewardText}</span>
           </div>
         `;
@@ -15427,7 +14487,7 @@ const ZEUS_AXE_SVG = `
       if (invExpLevel) invExpLevel.textContent   = `Nivel ${equippedWeapon.level}`;
       if (invExpNums)  invExpNums.textContent    = `${equippedWeapon.exp} / ${expToNextEq} EXP`;
 
-      const typeMap = { katana:'Melee', 'chain-scythe':'Cadena', 'pulse-baton':'Bastón', 'ion-pistols':'Dual', 'mantis-blades':'Garra', 'storm-guitar':'Shock', 'solar-halberd':'Asta', 'volt-daggers':'Daga', 'mirage-rifle':'Rifle', 'nebula-glaive':'Guadaña', 'vortex-cannon':'Cañón', 'aether-pike':'Lanza', 'zeus-axe':'Hacha', 'tiger-gloves':'Garras' };
+      const typeMap = { katana:'Melee', 'chain-scythe':'Cadena', 'pulse-baton':'Bastón', 'ion-pistols':'Dual', 'mantis-blades':'Garra', 'storm-guitar':'Shock', 'solar-halberd':'Asta', 'volt-daggers':'Daga', 'mirage-rifle':'Rifle', 'nebula-glaive':'Guadaña', 'vortex-cannon':'Cañón', 'aether-pike':'Lanza', 'zeus-axe':'Hacha' };
       const dmg = getWeaponRuntimeDamage(selectedWeaponId);
       if (invStatDmg)  { invStatDmg.textContent = dmg; }
       if (invStatLvl)  { invStatLvl.textContent = equippedWeapon.level; }
@@ -15553,7 +14613,7 @@ const ZEUS_AXE_SVG = `
               ${selIsEq ? '&#10003; Equipado' : 'Equipar'}
             </button>
             <button class="inv-action-btn upgrade" data-go-armory="1">
-              Mejorar en Armeria
+              Mejorar en Armería
             </button>
             <button class="inv-action-btn discard">Descartar</button>
           </div>
@@ -15604,7 +14664,7 @@ const ZEUS_AXE_SVG = `
       wListEl.innerHTML = '';
 
       if (!weaponEntries.length) {
-        wListEl.innerHTML = '<div style="color:var(--muted);font-size:0.78rem;padding:0.5rem 0">Sin armas aun.</div>';
+        wListEl.innerHTML = '<div style="color:var(--muted);font-size:0.78rem;padding:0.5rem 0">Sin armas aún.</div>';
       } else {
         if (!state.weapons[selectedWeaponId]) selectedWeaponId = weaponEntries[0][0];
         weaponEntries.forEach(([id, weapon]) => {
@@ -15660,10 +14720,10 @@ const ZEUS_AXE_SVG = `
       selectedUpgradeItems.clear();
 
       const items = Object.values(state.items || {});
-      if (mCountEl) mCountEl.textContent = items.length + ' item' + (items.length !== 1 ? 's' : '');
+      if (mCountEl) mCountEl.textContent = items.length + ' ítem' + (items.length !== 1 ? 's' : '');
 
       if (items.length === 0) {
-        iGridEl.innerHTML = '<div style="color:var(--muted);font-size:0.78rem;padding:0.5rem 0">Sin materiales aun.</div>';
+        iGridEl.innerHTML = '<div style="color:var(--muted);font-size:0.78rem;padding:0.5rem 0">Sin materiales aún.</div>';
       } else {
         items.forEach(item => {
           const chip = document.createElement('button');
@@ -15718,7 +14778,7 @@ const ZEUS_AXE_SVG = `
         const w = state.weapons[selectedWeaponId];
         if (w && totalExp > 0) {
           const needed = getExpToNext(w.level) - w.exp;
-          metaEl.textContent = totalExp >= needed ? '!Sube de nivel!' : `Faltan ${needed - totalExp} EXP para Nv.${w.level + 1}`;
+          metaEl.textContent = totalExp >= needed ? '¡Sube de nivel!' : `Faltan ${needed - totalExp} EXP para Nv.${w.level + 1}`;
         } else {
           metaEl.textContent = '';
         }
@@ -15748,7 +14808,7 @@ const ZEUS_AXE_SVG = `
       const fbEl = document.getElementById('armory-feedback');
       if (fbEl) {
         fbEl.textContent = weapon.level > prevLevel
-          ? `!Subio a Nivel ${weapon.level}! +${gained} EXP`
+          ? `¡Subió a Nivel ${weapon.level}! +${gained} EXP`
           : `+${gained} EXP aplicados`;
         clearTimeout(fbEl._t);
         fbEl._t = setTimeout(() => { fbEl.textContent = ''; }, 2800);
@@ -15787,9 +14847,6 @@ const ZEUS_AXE_SVG = `
     if (summonBack) summonBack.addEventListener('click', () => setSummonOpen(false));
     if (storeBtn) storeBtn.addEventListener('click', () => setStoreOpen(true));
     if (storeBack) storeBack.addEventListener('click', () => setStoreOpen(false));
-    if (storeLinkBtn) storeLinkBtn.addEventListener('click', () => {
-      requestOceanPayLink('Inicia sesion en Ocean Pay para habilitar compras y sincronizacion completa en WildWeapon Mayhem.');
-    });
     if (armoryBtn) armoryBtn.addEventListener('click', () => setArmoryOpen(true));
     if (armoryBack) armoryBack.addEventListener('click', () => setArmoryOpen(false));
     if (arenaBack) arenaBack.addEventListener('click', () => setArenaOpen(false));
@@ -15820,9 +14877,7 @@ const ZEUS_AXE_SVG = `
       setArenaOpen(false);
     });
     if (applyUpgradeBtn) applyUpgradeBtn.addEventListener('click', () => applyUpgrade());
-    if (opLinkBtn) opLinkBtn.addEventListener('click', () => {
-      requestOceanPayLink('Inicia sesion en Ocean Pay para sincronizar MayhemCoins y desbloquear funciones conectadas.');
-    });
+    if (opLinkBtn) opLinkBtn.addEventListener('click', () => openOceanPayAuth());
     if (opAuthClose) opAuthClose.addEventListener('click', () => closeOceanPayAuth());
     if (opAuthCancel) opAuthCancel.addEventListener('click', () => closeOceanPayAuth());
     if (opAuthForm) opAuthForm.addEventListener('submit', submitOceanPayAuth);
@@ -15920,7 +14975,7 @@ const ZEUS_AXE_SVG = `
           updateArenaUI();
         }
         if (key === 'e') {
-          // E: Solo El?ctrico — lanzar rayo hacia el cursor que rebota entre enemigos
+          // E: Solo Eléctrico — lanzar rayo hacia el cursor que rebota entre enemigos
           cooldowns.e = now + 2300;
           const to = { x: playerPos.x + Math.cos(aim) * 200, y: playerPos.y + Math.sin(aim) * 200 };
           // SFX: high electric squeal
@@ -15960,7 +15015,7 @@ const ZEUS_AXE_SVG = `
       // ── SOLAR HALBERD ───────────────────────────────────────────────
       if (weapon === 'solar_halberd') {
         if (key === 'q') {
-          // Q: Lanza Solar — proyectil de luz recta con explosi?n al impactar
+          // Q: Lanza Solar — proyectil de luz recta con explosión al impactar
           cooldowns.q = now + 1800;
           const to = { x: playerPos.x + Math.cos(aim)*220, y: playerPos.y + Math.sin(aim)*220 };
           addEffect({ type: 'sh-q-lance', from: playerPos, to, aim, duration: 0.45 });
@@ -15972,7 +15027,7 @@ const ZEUS_AXE_SVG = `
           updateArenaUI();
         }
         if (key === 'e') {
-          // E: Torbellino Solar — giro de 360° con la alabarda, da?o en radio total
+          // E: Torbellino Solar — giro de 360° con la alabarda, daño en radio total
           cooldowns.e = now + 2400;
           addEffect({ type: 'sh-e-whirl', x: playerPos.x, y: playerPos.y, radius: 145, duration: 0.65 });
           addShake(8, 160);
@@ -16130,237 +15185,94 @@ const ZEUS_AXE_SVG = `
       { dmgMult: 1.10, radius: 170, dur: 0.30, shake: 7, type: 'sh-m1-slam'  },  // suelo
     ];
 
-    const TG_M1_SWINGS = [
-      { start: -0.92, end: 0.32, lane: -1 },
-      { start: 0.86, end: -0.34, lane: 1 },
-      { start: -1.08, end: 0.52, lane: -1 },
-      { start: 1.02, end: -0.58, lane: 1 }
-    ];
-    const TG_M1_CONFIG = [
-      { dmgMult: 0.62, radius: 118, spread: Math.PI * 0.46, shake: 3, charge: 8.5 },
-      { dmgMult: 0.66, radius: 122, spread: Math.PI * 0.48, shake: 3, charge: 9 },
-      { dmgMult: 0.74, radius: 128, spread: Math.PI * 0.5, shake: 4, charge: 10 },
-      { dmgMult: 0.88, radius: 138, spread: Math.PI * 0.54, shake: 6, charge: 12 }
-    ];
-
     function triggerM1() {
       if (!currentRun) return;
       const now = performance.now();
       if (now < cooldowns.m1) return;
-      const setM1Cooldown = (baseMs) => {
-        cooldowns.m1 = now + Math.max(Number(baseMs || 0), M1_SPAM_LOCK_MS);
-      };
       const { x, y } = getPlayerPosPx();
       const playerPos = { x, y };
       const aim = getAimAngle(playerPos);
       const weapon = getActiveWeaponId();
 
       if (weapon === 'zeus_axe') {
-        if (now < zeusAxeAnimUntil) return;
-        zeusAxeLastM1At = now;
-        zeusAxeAnimUntil = now + ZEUS_AXE_ATTACK_DURATION_MS;
-        const attackSerial = ++zeusAxeAttackSerial;
-        playZeusAxeM1Sfx();
-        setM1Cooldown(ZEUS_AXE_ATTACK_DURATION_MS);
-        const zeusCombo = m1Combo % ZEUS_M1_SWINGS.length;
-        const swing = ZEUS_M1_SWINGS[zeusCombo];
-        const profile = ZEUS_M1_PROFILES[zeusCombo];
+        cooldowns.m1 = now + 210;
+        const swing = M1_SWINGS[m1Combo % M1_SWINGS.length];
         const startAngle = aim + swing.start;
         const endAngle   = aim + swing.end;
-        const ZEUS_RADIUS = currentRun.phase === 'horde' ? (profile.radius + 14) : profile.radius;
-        const ZEUS_SPREAD = profile.spread;
+        const ZEUS_RADIUS = currentRun.phase === 'horde' ? 165 : 128;
+        const ZEUS_SPREAD = Math.PI * 0.58;
         addEffect({
-          type: 'za-m1-arc',
+          type: 'katana-swing',
           x: playerPos.x,
           y: playerPos.y,
           startAngle,
           endAngle,
           radius: ZEUS_RADIUS,
-          combo: zeusCombo,
-          duration: ZEUS_AXE_ATTACK_DURATION_MS / 1000
+          duration: 0.24
         });
-        addEffect({
-          type: 'za-m1-shock',
-          x: playerPos.x,
-          y: playerPos.y,
-          radius: ZEUS_RADIUS + 26,
-          combo: zeusCombo,
-          duration: Math.max(0.24, (ZEUS_AXE_ATTACK_DURATION_MS / 1000) * 0.75)
-        });
-        addShake(profile.shake, 105 + zeusCombo * 15);
-        const primaryDelay = ZEUS_AXE_HIT_PRIMARY_FRAME * ZEUS_AXE_FRAME_STEP_MS;
-        const secondaryDelay = ZEUS_AXE_HIT_SECONDARY_FRAME * ZEUS_AXE_FRAME_STEP_MS;
-        const electrifyTickDamage = currentRun.weapon.damage * ZEUS_ELECTRIFY_TICK_MULT;
+        addEffect({ type: 'kt-sparks', x: playerPos.x, y: playerPos.y, radius: ZEUS_RADIUS + 20, duration: 0.24 });
+        addShake(5, 95);
+        applyArcDamage(playerPos, ZEUS_RADIUS, aim, ZEUS_SPREAD, currentRun.weapon.damage * 0.95);
         setTimeout(() => {
           if (!currentRun) return;
-          if (attackSerial !== zeusAxeAttackSerial) return;
-          const strikeOrigin = {
-            x: playerPos.x + Math.cos(aim) * 24,
-            y: playerPos.y + Math.sin(aim) * 24
-          };
-          addEffect({
-            type: 'sg-e-bolt',
-            from: strikeOrigin,
-            to: {
-              x: playerPos.x + Math.cos(aim) * (ZEUS_RADIUS * 0.92),
-              y: playerPos.y + Math.sin(aim) * (ZEUS_RADIUS * 0.92)
-            },
-            aim,
-            duration: 0.14
-          });
-          applyArcDamage(playerPos, ZEUS_RADIUS, aim, ZEUS_SPREAD, currentRun.weapon.damage * profile.dmgMain);
-          applyZeusElectrify(playerPos, ZEUS_RADIUS, aim, ZEUS_SPREAD, electrifyTickDamage, strikeOrigin);
-        }, primaryDelay);
-        setTimeout(() => {
-          if (!currentRun) return;
-          if (attackSerial !== zeusAxeAttackSerial) return;
-          const followRadius = Math.max(94, ZEUS_RADIUS - 22);
-          addEffect({
-            type: 'za-m1-shock',
-            x: playerPos.x + Math.cos(aim) * 18,
-            y: playerPos.y + Math.sin(aim) * 18,
-            radius: followRadius,
-            combo: zeusCombo,
-            duration: 0.18
-          });
-          applyArcDamage(playerPos, followRadius, aim, ZEUS_SPREAD + 0.04, currentRun.weapon.damage * profile.dmgFollow);
-          applyZeusElectrify(playerPos, followRadius, aim, ZEUS_SPREAD + 0.04, electrifyTickDamage, {
-            x: playerPos.x + Math.cos(aim) * 18,
-            y: playerPos.y + Math.sin(aim) * 18
-          });
-        }, secondaryDelay);
-        addCharge(profile.charge);
+          applyArcDamage(playerPos, Math.max(90, ZEUS_RADIUS - 26), aim, ZEUS_SPREAD, currentRun.weapon.damage * 0.45);
+        }, 95);
+        addCharge(10.5);
         if (currentRun && currentRun.stats) currentRun.stats.m1Hits += 1;
-        m1Combo = (m1Combo + 1) % ZEUS_M1_SWINGS.length;
-        updateArenaUI();
-        return;
-      }
-
-      if (weapon === 'tiger_gloves') {
-        const tgCombo = m1Combo % TG_M1_SWINGS.length;
-        const swing = TG_M1_SWINGS[tgCombo];
-        const cfg = TG_M1_CONFIG[tgCombo];
-        tigerGlovesLastM1At = now;
-        playTigerGlovesM1Sfx();
-        setM1Cooldown(165);
-        const startAngle = aim + swing.start;
-        const endAngle = aim + swing.end;
-        const radius = currentRun.phase === 'horde' ? cfg.radius + 16 : cfg.radius;
-        addEffect({
-          type: 'tg-claw-swipe',
-          x: playerPos.x,
-          y: playerPos.y,
-          startAngle,
-          endAngle,
-          radius,
-          lane: swing.lane,
-          aim,
-          duration: 0.2
-        });
-        if (tgCombo === TG_M1_SWINGS.length - 1) {
-          addEffect({
-            type: 'tg-rake-burst',
-            x: playerPos.x + Math.cos(aim) * 26,
-            y: playerPos.y + Math.sin(aim) * 26,
-            radius: radius + 26,
-            aim,
-            duration: 0.34
-          });
-        }
-        addShake(cfg.shake, 72 + tgCombo * 18);
-        applyArcDamage(playerPos, radius, aim, cfg.spread, currentRun.weapon.damage * cfg.dmgMult);
-        if (tgCombo === TG_M1_SWINGS.length - 1) {
-          setTimeout(() => {
-            if (!currentRun) return;
-            applyArcDamage(playerPos, Math.max(92, radius - 12), aim, cfg.spread + 0.08, currentRun.weapon.damage * 0.36);
-          }, 80);
-        }
-        addCharge(cfg.charge);
-        if (currentRun && currentRun.stats) currentRun.stats.m1Hits += 1;
-        m1Combo = (m1Combo + 1) % TG_M1_SWINGS.length;
+        m1Combo = (m1Combo + 1) % M1_SWINGS.length;
         updateArenaUI();
         return;
       }
 
       if (weapon === 'chain_scythe') {
-        // Chain Scythe M1: timeline por frames, sincronizada al spritesheet.
-        if (now < chainScytheAnimUntil) return;
-        const attackStartedAt = performance.now();
-        chainScytheLastM1At = attackStartedAt;
-        chainScytheAnimUntil = attackStartedAt + CHAIN_SCYTHE_ATTACK_DURATION_MS;
-        const attackSerial = ++chainScytheAttackSerial;
-        playChainScytheM1Sfx();
-        setM1Cooldown(CHAIN_SCYTHE_ATTACK_DURATION_MS);
+        // Chain Scythe M1: barrido lento y pesado de guadaña + eslabones de cadena
+        cooldowns.m1 = now + 310; // más lento que katana (peso de la guadaña)
         const swings = CS_M1_SWINGS;
-        const comboIndex = m1Combo % swings.length;
-        const swing = swings[comboIndex];
+        const swing = swings[m1Combo % swings.length];
         const startAngle = aim + swing.start;
         const endAngle = aim + swing.end;
-        const phase = comboIndex; // 0..2
-        const isHorde = currentRun.phase === 'horde';
+        const phase = m1Combo % 3; // 3 fases del combo
 
-        CS_M1_FRAME_PLAN.forEach((step, stepIndex) => {
-          const delayMs = step.frame * CHAIN_SCYTHE_FRAME_STEP_MS;
-          setTimeout(() => {
-            if (!currentRun) return;
-            if (attackSerial !== chainScytheAttackSerial) return;
-
-            const radius = isHorde ? (step.radius + 34) : step.radius;
-            const spread = step.spread + (phase === 2 ? 0.06 : 0);
-            const totalFrames = Math.max(1, CHAIN_SCYTHE_ATTACK_SEQUENCE.length - 1);
-            const t = Math.min(1, step.frame / totalFrames);
-            const tipAngle = startAngle + (endAngle - startAngle) * t;
-            const segStart = startAngle + (endAngle - startAngle) * Math.max(0, t - 0.18);
-            const segEnd = startAngle + (endAngle - startAngle) * Math.min(1, t + 0.08);
-            const hitAngle = segStart + (segEnd - segStart) * 0.5;
-            const hitPos = getPlayerPosPx();
-            const hitCenter = { x: hitPos.x, y: hitPos.y };
-
-            addEffect({
-              type: 'cs-m1-swing',
-              x: hitCenter.x,
-              y: hitCenter.y,
-              startAngle: segStart,
-              endAngle: segEnd,
-              radius,
-              phase,
-              duration: step.fxDur
-            });
-
-            if (step.chainLash || (phase === 2 && stepIndex === CS_M1_FRAME_PLAN.length - 1)) {
-              const chainTo = {
-                x: hitCenter.x + Math.cos(tipAngle) * (radius + 24),
-                y: hitCenter.y + Math.sin(tipAngle) * (radius + 24)
-              };
-              addEffect({
-                type: 'cs-m1-chain-lash',
-                from: { x: hitCenter.x, y: hitCenter.y },
-                to: chainTo,
-                duration: 0.3
-              });
-            }
-
-            addShake(step.shake + (phase === 2 ? 1 : 0), 72 + stepIndex * 22);
-            const dmgMult = CS_M1_TOTAL_DAMAGE_MULT * step.dmgShare;
-            applyArcDamage(hitCenter, radius, hitAngle, spread, currentRun.weapon.damage * dmgMult);
-          }, delayMs);
+        // Efecto principal: arco de guadaña rojo
+        addEffect({
+          type: 'cs-m1-swing',
+          x: playerPos.x,
+          y: playerPos.y,
+          startAngle,
+          endAngle,
+          radius: 105,
+          phase,
+          duration: 0.28
         });
 
-        setTimeout(() => {
-          if (!currentRun) return;
-          if (attackSerial !== chainScytheAttackSerial) return;
-          addCharge(phase === 2 ? 11 : 9);
-          if (currentRun && currentRun.stats) currentRun.stats.m1Hits += 1;
-          updateArenaUI();
-        }, CHAIN_SCYTHE_ATTACK_DURATION_MS);
+        // Cada 3er golpe: eslabón de cadena que sale disparado
+        if (phase === 2) {
+          const chainTo = {
+            x: playerPos.x + Math.cos(aim) * 130,
+            y: playerPos.y + Math.sin(aim) * 130
+          };
+          addEffect({
+            type: 'cs-m1-chain-lash',
+            from: { x: playerPos.x, y: playerPos.y },
+            to: chainTo,
+            duration: 0.32
+          });
+          addShake(4, 95);
+        } else {
+          addShake(2, 65);
+        }
 
+        if (currentRun.phase === 'horde') {
+          applyArcDamage(playerPos, 180, aim, Math.PI * 0.65, currentRun.weapon.damage * 0.75);
+        } else {
+          applyArcDamage(playerPos, 90, aim, Math.PI * 0.65, currentRun.weapon.damage * 0.75);
+        }
+        addCharge(9);
         m1Combo = (m1Combo + 1) % swings.length;
-        updateArenaUI();
-        return;
       } else if (weapon === 'storm_guitar') {
         const sgCombo = m1Combo % SG_M1_SWINGS.length;
         const cfg     = SG_M1_CONFIG[sgCombo];
-        setM1Cooldown(200);
+        cooldowns.m1  = now + 200;
         const swing      = SG_M1_SWINGS[sgCombo];
         const startAngle = aim + swing.start;
         const endAngle   = aim + swing.end;
@@ -16392,7 +15304,7 @@ const ZEUS_AXE_SVG = `
         const shCombo = m1Combo % SH_M1_SWINGS.length;
         const cfg     = SH_M1_CONFIG[shCombo];
         const swing   = SH_M1_SWINGS[shCombo];
-        setM1Cooldown(220);
+        cooldowns.m1  = now + 220;
         const startAngle = aim + swing.start;
         const endAngle   = aim + swing.end;
 
@@ -16419,7 +15331,7 @@ const ZEUS_AXE_SVG = `
 
       } else {
         // Katana M1 — wide forward cone, fires damage on click and mid-swing
-        setM1Cooldown(180);
+        cooldowns.m1 = now + 180;
         const swing = M1_SWINGS[m1Combo % M1_SWINGS.length];
         const startAngle = aim + swing.start;
         const endAngle   = aim + swing.end;
@@ -16505,9 +15417,9 @@ const ZEUS_AXE_SVG = `
     });
   </script>
 
-  <!-- 
+  <!-- ══════════════════════════════════════════
        END-OF-RUN SCREEN
-   -->
+  ══════════════════════════════════════════ -->
   <div class="run-end-screen" id="run-end-screen" aria-hidden="true">
     <div class="run-end-shell">
 
@@ -16581,7 +15493,7 @@ const ZEUS_AXE_SVG = `
       <!-- CTA -->
       <div class="run-end-cta">
         <button class="run-end-btn primary" id="rer-play-again">Jugar de nuevo</button>
-        <button class="run-end-btn secondary" id="rer-go-menu">Volver al menu</button>
+        <button class="run-end-btn secondary" id="rer-go-menu">Volver al menú</button>
       </div>
 
     </div>
@@ -16688,4 +15600,3 @@ const ZEUS_AXE_SVG = `
 
 </body>
 </html>
-
